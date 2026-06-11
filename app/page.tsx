@@ -14,11 +14,13 @@ import {
   Scale,
   Wallet,
   Handshake,
-  CalendarCheck
+  CalendarCheck,
+  ChevronDown
 } from "lucide-react"
 
 export default function ReignaraLanding() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
+  const [aboutOpen, setAboutOpen] = useState(false)
 
   return (
     <div className="min-h-screen bg-bg">
@@ -41,9 +43,39 @@ export default function ReignaraLanding() {
             <Link href="#products" className="text-[15px] font-medium text-nav-text hover:text-t1 transition-colors">
               Products
             </Link>
-            <Link href="#about" className="text-[15px] font-medium text-nav-text hover:text-t1 transition-colors">
-              About
-            </Link>
+            {/* About dropdown */}
+            <div
+              className="relative"
+              onMouseEnter={() => setAboutOpen(true)}
+              onMouseLeave={() => setAboutOpen(false)}
+            >
+              <button
+                className="flex items-center gap-1 text-[15px] font-medium text-nav-text hover:text-t1 transition-colors"
+                aria-expanded={aboutOpen}
+                aria-haspopup="true"
+              >
+                About
+                <ChevronDown className={`h-4 w-4 transition-transform ${aboutOpen ? "rotate-180" : ""}`} />
+              </button>
+              {aboutOpen && (
+                <div className="absolute left-1/2 top-full z-50 w-56 -translate-x-1/2 pt-3">
+                  <div className="overflow-hidden rounded-2xl border border-border bg-card p-2 shadow-xl">
+                    <Link
+                      href="#about"
+                      className="block rounded-xl px-4 py-3 text-[15px] font-medium text-nav-text hover:bg-bg hover:text-t1 transition-colors"
+                    >
+                      About Reignara
+                    </Link>
+                    <Link
+                      href="/team"
+                      className="block rounded-xl px-4 py-3 text-[15px] font-medium text-nav-text hover:bg-bg hover:text-t1 transition-colors"
+                    >
+                      Our Team
+                    </Link>
+                  </div>
+                </div>
+              )}
+            </div>
             <Link href="#contact" className="text-[15px] font-medium text-nav-text hover:text-t1 transition-colors">
               Contact
             </Link>
@@ -109,7 +141,14 @@ export default function ReignaraLanding() {
                 onClick={() => setMobileMenuOpen(false)}
                 className="rounded-xl border border-border bg-card px-4 py-3 text-[15px] font-medium text-t1"
               >
-                About
+                About Reignara
+              </Link>
+              <Link
+                href="/team"
+                onClick={() => setMobileMenuOpen(false)}
+                className="rounded-xl border border-border bg-card px-4 py-3 text-[15px] font-medium text-t1"
+              >
+                Our Team
               </Link>
               <Link
                 href="#contact"
@@ -267,32 +306,13 @@ export default function ReignaraLanding() {
         </div>
       </section>
 
-      {/* Marquee Strip */}
-      <div className="overflow-hidden bg-dark-slab py-4">
-        <div className="marquee-container">
-          <div className="marquee-content">
-            {[...Array(2)].map((_, i) => (
-              <div key={i} className="flex shrink-0 items-center">
-                <span className="mx-4 sm:mx-6 text-[11px] sm:text-[14px] font-medium uppercase tracking-[0.15em] sm:tracking-[0.2em] text-bg/60">Director</span>
-                <span className="text-sage">◆</span>
-                <span className="mx-4 sm:mx-6 text-[11px] sm:text-[14px] font-medium uppercase tracking-[0.15em] sm:tracking-[0.2em] text-bg/60">Podium</span>
-                <span className="text-sage">◆</span>
-                <span className="mx-4 sm:mx-6 text-[11px] sm:text-[14px] font-medium uppercase tracking-[0.15em] sm:tracking-[0.2em] text-bg/60">Spotlight</span>
-                <span className="text-sage">◆</span>
-                <span className="mx-4 sm:mx-6 text-[11px] sm:text-[14px] font-medium uppercase tracking-[0.15em] sm:tracking-[0.2em] text-bg/60">Reign</span>
-                <span className="text-sage">◆</span>
-                <span className="mx-4 sm:mx-6 text-[11px] sm:text-[14px] font-medium uppercase tracking-[0.15em] sm:tracking-[0.2em] text-bg/60">Merit</span>
-                <span className="text-sage">◆</span>
-                <span className="mx-4 sm:mx-6 text-[11px] sm:text-[14px] font-medium uppercase tracking-[0.15em] sm:tracking-[0.2em] text-bg/60">Vault</span>
-                <span className="text-sage">◆</span>
-                <span className="mx-4 sm:mx-6 text-[11px] sm:text-[14px] font-medium uppercase tracking-[0.15em] sm:tracking-[0.2em] text-bg/60">Patron</span>
-                <span className="text-sage">◆</span>
-                <span className="mx-4 sm:mx-6 text-[11px] sm:text-[14px] font-medium uppercase tracking-[0.15em] sm:tracking-[0.2em] text-bg/60">Envoy</span>
-                <span className="text-sage">◆</span>
-              </div>
-            ))}
-          </div>
-        </div>
+      {/* Elegant Divider */}
+      <div className="mx-auto flex max-w-7xl items-center gap-4 px-4 py-10 sm:gap-6 sm:px-6 sm:py-14">
+        <span className="h-px flex-1 bg-gradient-to-r from-transparent to-border" />
+        <span className="rotate-45 text-sage" aria-hidden="true">
+          <span className="block h-1.5 w-1.5 rounded-[1px] bg-sage" />
+        </span>
+        <span className="h-px flex-1 bg-gradient-to-l from-transparent to-border" />
       </div>
 
       {/* Products Section */}
@@ -563,6 +583,9 @@ export default function ReignaraLanding() {
             <Link href="#about" className="text-[14px] font-medium text-nav-text hover:text-t1 transition-colors">
               About
             </Link>
+            <Link href="/team" className="text-[14px] font-medium text-nav-text hover:text-t1 transition-colors">
+              Team
+            </Link>
             <Link href="#contact" className="text-[14px] font-medium text-nav-text hover:text-t1 transition-colors">
               Contact
             </Link>
@@ -578,26 +601,6 @@ export default function ReignaraLanding() {
           </p>
         </div>
       </footer>
-
-      {/* Marquee animation styles */}
-      <style jsx>{`
-        .marquee-container {
-          display: flex;
-          width: 100%;
-        }
-        .marquee-content {
-          display: flex;
-          animation: marquee 20s linear infinite;
-        }
-        @keyframes marquee {
-          0% {
-            transform: translateX(0);
-          }
-          100% {
-            transform: translateX(-50%);
-          }
-        }
-      `}</style>
     </div>
   )
 }
