@@ -9,7 +9,7 @@ const teamMembers = [
   {
     name: "Benson Tanner",
     role: "Founder",
-    image: "/images/team/benson-tanner.png",
+    image: "/images/team/benson-tanner.jpg",
     bio: [
       "Benson founded Reignara to bring modern, purpose-built tools to a community that has long made do with spreadsheets, group texts, and scattered communication. Having grown up around the pageant world, he saw firsthand how much time directors and contestants lost to manual work that software should have handled years ago.",
       "As Founder, he sets the company's vision and product direction, working closely with the team to make sure every feature solves a real problem for the people who rely on it. He believes great tools should feel invisible, letting organizers focus on the moments that matter most.",
@@ -18,7 +18,7 @@ const teamMembers = [
   {
     name: "Keylee Davis",
     role: "Chief Revenue Officer",
-    image: "/images/team/keylee-davis.png",
+    image: "/images/team/keylee-davis.jpg",
     bio: [
       "Keylee leads growth and partnerships at Reignara, building the relationships with directors, sponsors, and pageant organizations that help the platform reach communities everywhere. She brings a rare combination of commercial instinct and genuine care for the people on the other side of every conversation.",
       "Her approach to revenue is rooted in trust: she would rather build a lasting partnership than close a quick deal. That philosophy has shaped how Reignara works with the organizations it serves, and it keeps the company grounded in long-term relationships over short-term wins.",
@@ -27,7 +27,7 @@ const teamMembers = [
   {
     name: "Megan Bartschi",
     role: "Chief Community Officer",
-    image: "/images/team/megan-bartschi.png",
+    image: "/images/team/megan-bartschi.jpg",
     bio: [
       "Megan champions the titleholders, contestants, and directors who use Reignara every day. She spends her time listening to the community, gathering feedback, and turning the real experiences of pageant participants into the features and improvements that shape the platform.",
       "As Chief Community Officer, she makes sure no voice gets lost as Reignara grows. From onboarding new organizations to celebrating titleholders' wins, Megan keeps the human side of pageantry at the center of everything the company builds.",
