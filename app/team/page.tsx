@@ -9,7 +9,7 @@ const teamMembers = [
   {
     name: "Benson Tanner",
     role: "Founder",
-    image: "/images/team/benson-tanner.jpg",
+    initials: "BT",
     bio: [
       "Benson founded Reignara to bring modern, purpose-built tools to a community that has long made do with spreadsheets, group texts, and scattered communication. Having grown up around the pageant world, he saw firsthand how much time directors and contestants lost to manual work that software should have handled years ago.",
       "As Founder, he sets the company's vision and product direction, working closely with the team to make sure every feature solves a real problem for the people who rely on it. He believes great tools should feel invisible, letting organizers focus on the moments that matter most.",
@@ -18,7 +18,7 @@ const teamMembers = [
   {
     name: "Keylee Davis",
     role: "Chief Revenue Officer",
-    image: "/images/team/keylee-davis.jpg",
+    initials: "KD",
     bio: [
       "Keylee leads growth and partnerships at Reignara, building the relationships with directors, sponsors, and pageant organizations that help the platform reach communities everywhere. She brings a rare combination of commercial instinct and genuine care for the people on the other side of every conversation.",
       "Her approach to revenue is rooted in trust: she would rather build a lasting partnership than close a quick deal. That philosophy has shaped how Reignara works with the organizations it serves, and it keeps the company grounded in long-term relationships over short-term wins.",
@@ -27,7 +27,7 @@ const teamMembers = [
   {
     name: "Megan Bartschi",
     role: "Chief Community Officer",
-    image: "/images/team/megan-bartschi.jpg",
+    initials: "MB",
     bio: [
       "Megan champions the titleholders, contestants, and directors who use Reignara every day. She spends her time listening to the community, gathering feedback, and turning the real experiences of pageant participants into the features and improvements that shape the platform.",
       "As Chief Community Officer, she makes sure no voice gets lost as Reignara grows. From onboarding new organizations to celebrating titleholders' wins, Megan keeps the human side of pageantry at the center of everything the company builds.",
@@ -197,20 +197,21 @@ export default function TeamPage() {
               key={member.name}
               className="grid items-start gap-6 sm:gap-8 lg:grid-cols-5 lg:gap-12"
             >
-              {/* Portrait */}
+              {/* Portrait placeholder */}
               <div
-                className={`relative w-full max-w-sm overflow-hidden rounded-2xl border border-border bg-card lg:col-span-2 ${
+                className={`relative flex w-full max-w-sm items-center justify-center overflow-hidden rounded-2xl border border-border bg-card lg:col-span-2 ${
                   index % 2 === 1 ? "lg:order-2 lg:ml-auto" : ""
                 }`}
                 style={{ aspectRatio: "4 / 5" }}
+                aria-label={`${member.name} placeholder portrait`}
               >
-                <Image
-                  src={member.image || "/placeholder.svg"}
-                  alt={`Portrait of ${member.name}, ${member.role}`}
-                  fill
-                  sizes="(max-width: 1024px) 100vw, 40vw"
-                  className="object-cover"
+                <span
+                  className="pointer-events-none absolute inset-0 bg-gradient-to-br from-sage/10 to-gold/10"
+                  aria-hidden="true"
                 />
+                <span className="relative font-display text-[64px] sm:text-[80px] leading-none text-sage select-none">
+                  {member.initials}
+                </span>
               </div>
 
               {/* Bio */}
