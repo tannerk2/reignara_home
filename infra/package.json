@@ -1,0 +1,24 @@
+{
+  "name": "reignara-landing-infra",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "build": "tsc",
+    "cdk": "cdk",
+    "synth": "cdk synth",
+    "deploy:cert": "cdk deploy ReignaraLandingCertStack --require-approval never",
+    "deploy:site": "cdk deploy ReignaraLandingSiteStack --require-approval never",
+    "deploy:all": "cdk deploy --all --require-approval never",
+    "destroy:all": "cdk destroy --all --force"
+  },
+  "devDependencies": {
+    "@types/node": "^22.0.0",
+    "aws-cdk": "2.1122.0",
+    "ts-node": "^10.9.2",
+    "typescript": "~5.7.3"
+  },
+  "dependencies": {
+    "aws-cdk-lib": "2.180.0",
+    "constructs": "^10.4.2"
+  }
+}

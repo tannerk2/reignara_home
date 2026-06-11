@@ -1,0 +1,92 @@
+@import 'tailwindcss';
+
+@source "../app/**/*.{ts,tsx}";
+@source "../components/**/*.{ts,tsx}";
+@source not "../../**";
+
+:root {
+  /* Light theme - cream palette */
+  --background: #F5F3EF;
+  --foreground: #1A1A1A;
+  --card: #FFFFFF;
+  --card-foreground: #1A1A1A;
+  --popover: #FFFFFF;
+  --popover-foreground: #1A1A1A;
+  --primary: #8A9B8E;
+  --primary-foreground: #FFFFFF;
+  --secondary: #F5F3EF;
+  --secondary-foreground: #1A1A1A;
+  --muted: #F5F3EF;
+  --muted-foreground: #6B7280;
+  --accent: #8A9B8E;
+  --accent-foreground: #FFFFFF;
+  --destructive: #DC2626;
+  --destructive-foreground: #FFFFFF;
+  --border: rgba(26, 26, 26, 0.1);
+  --input: rgba(245, 243, 239, 0.5);
+  --ring: #8A9B8E;
+  --radius: 0.75rem;
+
+  /* Custom colors matching design system */
+  --bg: #F5F3EF;
+  --sidebar: #FFFFFF;
+  --header: #FFFFFF;
+  --sage: #8A9B8E;
+  --gold: #C9A87A;
+  --dark-slab: #1A1A1A;
+  --t1: #1A1A1A;
+  --t2: #6B7280;
+  --t3: #9CA3AF;
+  --nav-text: #374151;
+}
+
+@theme inline {
+  --font-sans: var(--font-sans), 'Inter', ui-sans-serif, system-ui, sans-serif;
+  --font-display: var(--font-display), 'Bavex', ui-serif, Georgia, serif;
+
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+
+  /* Custom theme colors */
+  --color-bg: var(--bg);
+  --color-sidebar: var(--sidebar);
+  --color-header: var(--header);
+  --color-sage: var(--sage);
+  --color-gold: var(--gold);
+  --color-dark-slab: var(--dark-slab);
+  --color-t1: var(--t1);
+  --color-t2: var(--t2);
+  --color-t3: var(--t3);
+  --color-nav-text: var(--nav-text);
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  body {
+    @apply bg-bg text-t1;
+  }
+}
