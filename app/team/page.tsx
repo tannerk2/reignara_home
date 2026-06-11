@@ -10,9 +10,12 @@ const teamMembers = [
     name: "Benson Tanner",
     role: "Founder",
     initials: "BT",
+    image: "/images/team/benson-tanner.jpg",
     bio: [
-      "Benson founded Reignara to bring modern, purpose-built tools to a community that has long made do with spreadsheets, group texts, and scattered communication. Having grown up around the pageant world, he saw firsthand how much time directors and contestants lost to manual work that software should have handled years ago.",
-      "As Founder, he sets the company's vision and product direction, working closely with the team to make sure every feature solves a real problem for the people who rely on it. He believes great tools should feel invisible, letting organizers focus on the moments that matter most.",
+      "Benson has spent his career at the intersection of enterprise AI strategy and cloud infrastructure — guiding large organizations across financial services, public sector, and high tech from early concept through the deployment of production systems that generate measurable commercial results. He has architected and delivered complex cloud infrastructure for some of the most demanding enterprises in the world, led AI strategy engagements for recognized global brands, and published widely on the architecture of modern agentic AI systems.",
+      "Reignara began with someone he loves. When his sister stepped into the Mrs. Idaho America role, Benson saw the pageant world from the inside — and what struck him most was the people behind it. He watched women pour countless hours into empowering one another, helping each other find their voice, and driving real, measurable impact in their communities. He also saw how much of that energy was absorbed by logistics, paperwork, and tools that simply couldn't keep pace.",
+      "That became the conviction behind Reignara: to give these women back their time. Reignara is built to handle the operational weight so directors, titleholders, and volunteers can focus on the parts that matter most — the mentorship, the advocacy, the community. The goal is not just better software, but a more sustainable balance and a richer experience for everyone the pageant world touches.",
+      "Reignara brings enterprise-grade innovative solutions to a community that has long outgrown the tools available to it. Benson is based in Meridian, Idaho.",
     ],
   },
   {
@@ -197,21 +200,33 @@ export default function TeamPage() {
               key={member.name}
               className="grid items-start gap-6 sm:gap-8 lg:grid-cols-5 lg:gap-12"
             >
-              {/* Portrait placeholder */}
+              {/* Portrait */}
               <div
                 className={`relative flex w-full max-w-sm items-center justify-center overflow-hidden rounded-2xl border border-border bg-card lg:col-span-2 ${
                   index % 2 === 1 ? "lg:order-2 lg:ml-auto" : ""
                 }`}
                 style={{ aspectRatio: "4 / 5" }}
-                aria-label={`${member.name} placeholder portrait`}
+                aria-label={member.image ? undefined : `${member.name} placeholder portrait`}
               >
-                <span
-                  className="pointer-events-none absolute inset-0 bg-gradient-to-br from-sage/10 to-gold/10"
-                  aria-hidden="true"
-                />
-                <span className="relative font-display text-[64px] sm:text-[80px] leading-none text-sage select-none">
-                  {member.initials}
-                </span>
+                {member.image ? (
+                  <Image
+                    src={member.image}
+                    alt={`Portrait of ${member.name}, ${member.role}`}
+                    fill
+                    sizes="(max-width: 1024px) 100vw, 40vw"
+                    className="object-cover"
+                  />
+                ) : (
+                  <>
+                    <span
+                      className="pointer-events-none absolute inset-0 bg-gradient-to-br from-sage/10 to-gold/10"
+                      aria-hidden="true"
+                    />
+                    <span className="relative font-display text-[64px] sm:text-[80px] leading-none text-sage select-none">
+                      {member.initials}
+                    </span>
+                  </>
+                )}
               </div>
 
               {/* Bio */}
