@@ -22,9 +22,12 @@ const teamMembers = [
     name: "Keylee Davis",
     role: "Chief Revenue Officer",
     initials: "KD",
+    image: "/images/team/keylee-davis.jpg",
     bio: [
-      "Keylee leads growth and partnerships at Reignara, building the relationships with directors, sponsors, and pageant organizations that help the platform reach communities everywhere. She brings a rare combination of commercial instinct and genuine care for the people on the other side of every conversation.",
-      "Her approach to revenue is rooted in trust: she would rather build a lasting partnership than close a quick deal. That philosophy has shaped how Reignara works with the organizations it serves, and it keeps the company grounded in long-term relationships over short-term wins.",
+      "Keylee leads growth and partnerships at Reignara, building the relationships with directors, sponsors, and pageant organizations that carry the platform into communities everywhere. She brings a rare combination of commercial instinct and genuine care for the people on the other side of every conversation — an ability to grow a business without ever losing sight of who it serves.",
+      "Her credibility is hard-earned, because she has lived every part of this world. Keylee has sat in nearly every seat the pageant experience offers — from the little sister program to state titleholder, and later as a sponsor, coach, and director. Pageantry has been woven through every chapter of her life, and she now considers it a privilege to pour that lifetime of perspective into a career spent helping others find their place in it. There is no role in this community she hasn't held, and no role she doesn't understand.",
+      "That breadth is exactly why she is the driving force behind Reignara's conviction that the platform is for all — for the first-time contestant and the seasoned director alike. Her approach to revenue is rooted in the same belief: she would rather build a lasting partnership than close a quick deal. That philosophy has shaped how Reignara works with the organizations it serves and keeps the company grounded in long-term relationships over short-term wins.",
+      "At the heart of it, Keylee believes you don't need a crown to share a message, help others, and lead with love. It's the principle that has guided her through every chapter of pageantry — and the one she brings to every relationship Reignara builds.",
     ],
   },
   {
