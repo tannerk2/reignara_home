@@ -36,8 +36,10 @@ const teamMembers = [
     initials: "MB",
     image: "/images/team/megan-bartschi.jpg",
     bio: [
-      "Megan champions the titleholders, contestants, and directors who use reignara every day. She spends her time listening to the community, gathering feedback, and turning the real experiences of pageant participants into the features and improvements that shape the platform.",
-      "As Chief Community Officer, she makes sure no voice gets lost as reignara grows. From onboarding new organizations to celebrating titleholders' wins, Megan keeps the human side of pageantry at the center of everything the company builds.",
+      "Megan serves as reignara's Chief Community Officer, leading the connection between the platform and the people it was built to serve. She works closely with directors, titleholders, contestants, and sponsors to understand their needs, gather feedback, and ensure their experiences directly influence the future of the platform.",
+      "Her journey in pageantry began in 2024 when, as a married mother of four, she entered her first competition. While she did not place that year, the experience sparked a passion for the personal growth, leadership, and community that pageantry makes possible. Driven by that passion, she immersed herself in the process and, just one year later, earned the title of Mrs. Idaho America 2025 before advancing to place in the Top 15 at Mrs. America.",
+      "Following her year of service, Megan was invited to be a Pageant Co-Director — giving her a rare perspective across every level of the industry. Having experienced pageantry as a contestant, titleholder, and director, she understands both the transformative impact of the journey and the operational challenges faced by the organizations that make it possible.",
+      "At reignara, Megan serves as the voice of the community, ensuring technology strengthens relationships rather than replacing them. She is passionate about creating tools that empower directors to lead with confidence, help titleholders maximize their impact, and give contestants an exceptional experience from application to crowning. Her belief is simple: when pageant organizations thrive, they create opportunities that change lives — and those experiences deserve to be supported by technology built with purpose.",
     ],
   },
 ]
