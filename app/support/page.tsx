@@ -278,7 +278,7 @@ export default function SupportPage() {
           <h2 className="font-display text-[24px] sm:text-[28px] text-bg">
             Still need help? Reach out directly.
           </h2>
-          <div className="mt-6 grid gap-4 text-[15px] sm:grid-cols-2">
+          <div className="mt-6 text-[15px]">
             <div>
               <p className="text-t3">Support email</p>
               <a
@@ -287,14 +287,6 @@ export default function SupportPage() {
               >
                 support@reignara.com
               </a>
-            </div>
-            <div>
-              <p className="text-t3">Mailing address</p>
-              <p className="mt-1 font-medium text-bg">
-                5429 N Red Hills Ave
-                <br />
-                Idaho, United States
-              </p>
             </div>
           </div>
           <div className="mt-8 flex flex-wrap gap-3">
