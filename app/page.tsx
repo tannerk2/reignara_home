@@ -15,8 +15,10 @@ import {
   Wallet,
   Handshake,
   CalendarCheck,
-  ChevronDown
+  ChevronDown,
+  Sparkles
 } from "lucide-react"
+import { CrownIcon } from "@/components/icons/CrownIcon"
 
 export default function ReignaraLanding() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
@@ -65,6 +67,12 @@ export default function ReignaraLanding() {
                       className="block rounded-xl px-4 py-3 text-[15px] font-medium text-nav-text hover:bg-bg hover:text-t1 transition-colors"
                     >
                       About Reignara
+                    </Link>
+                    <Link
+                      href="/who-its-for"
+                      className="block rounded-xl px-4 py-3 text-[15px] font-medium text-nav-text hover:bg-bg hover:text-t1 transition-colors"
+                    >
+                      Who It&apos;s For
                     </Link>
                     <Link
                       href="/team"
@@ -144,6 +152,13 @@ export default function ReignaraLanding() {
                 About Reignara
               </Link>
               <Link
+                href="/who-its-for"
+                onClick={() => setMobileMenuOpen(false)}
+                className="rounded-xl border border-border bg-card px-4 py-3 text-[15px] font-medium text-t1"
+              >
+                Who It&apos;s For
+              </Link>
+              <Link
                 href="/team"
                 onClick={() => setMobileMenuOpen(false)}
                 className="rounded-xl border border-border bg-card px-4 py-3 text-[15px] font-medium text-t1"
@@ -196,110 +211,29 @@ export default function ReignaraLanding() {
             Reignara builds tools that empower pageant directors, titleholders, and sponsors to operate with clarity, confidence, and connection.
           </p>
 
-          {/* CTAs */}
-          <div className="mt-8 flex flex-wrap justify-center gap-4">
-            <a
-              href="mailto:benson@reignara.com"
-              className="group inline-flex items-center gap-2 rounded-full bg-gold px-5 py-3 sm:px-6 sm:py-3.5 text-[14px] sm:text-[15px] font-medium text-t1 hover:bg-gold/90 transition-colors"
-            >
-              Request Early Access
-              <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
-            </a>
-            <Link
-              href="#products"
-              className="inline-flex items-center gap-2 rounded-full border border-dark-slab/20 px-5 py-3 sm:px-6 sm:py-3.5 text-[14px] sm:text-[15px] font-medium text-t1 hover:border-dark-slab/40 transition-colors"
-            >
-              Learn More
-            </Link>
-          </div>
-
-          {/* Product Suite - Elegant horizontal layout */}
-          <div className="mt-16 sm:mt-20 w-full">
-            <p className="mb-6 text-[11px] sm:text-[12px] font-medium uppercase tracking-[0.25em] text-t3">
-              The reignara Suite
+          {/* Who it's for — persona quick selector */}
+          <div className="mt-10 sm:mt-12 w-full">
+            <p className="mb-6 text-[11px] sm:text-[12px] font-medium uppercase tracking-[0.25em] text-sage">
+              Who it&apos;s for
             </p>
-
-            {/* Desktop: Single elegant row with dividers */}
-            <div className="hidden lg:flex items-center justify-center gap-0">
+            <div className="mx-auto grid max-w-3xl grid-cols-2 gap-3 sm:grid-cols-4 sm:gap-4">
               {[
-                { name: "Director", icon: LayoutDashboard },
-                { name: "Podium", icon: MessageSquare },
-                { name: "Spotlight", icon: BarChart3 },
-                { name: "Reign", icon: Smartphone },
-                { name: "Merit", icon: Scale },
-                { name: "Vault", icon: Wallet },
-                { name: "Patron", icon: Handshake },
-                { name: "Envoy", icon: CalendarCheck },
-              ].map((product, i) => (
-                <div key={product.name} className="flex items-center">
-                  <div className="group flex items-center gap-2.5 px-5 py-2 transition-colors hover:bg-dark-slab/5 rounded-lg cursor-default">
-                    <product.icon className="h-4 w-4 text-sage" />
-                    <span className="text-[14px] font-medium text-nav-text group-hover:text-t1 transition-colors">
-                      {product.name}
-                    </span>
-                  </div>
-                  {i < 7 && (
-                    <span className="text-dark-slab/15 select-none">|</span>
-                  )}
-                </div>
-              ))}
-            </div>
-
-            {/* Tablet: Two rows */}
-            <div className="hidden sm:flex lg:hidden flex-col items-center gap-4">
-              <div className="flex items-center justify-center gap-0">
-                {[
-                  { name: "Director", icon: LayoutDashboard },
-                  { name: "Podium", icon: MessageSquare },
-                  { name: "Spotlight", icon: BarChart3 },
-                  { name: "Reign", icon: Smartphone },
-                ].map((product, i) => (
-                  <div key={product.name} className="flex items-center">
-                    <div className="flex items-center gap-2 px-4 py-2">
-                      <product.icon className="h-4 w-4 text-sage" />
-                      <span className="text-[14px] font-medium text-nav-text">{product.name}</span>
-                    </div>
-                    {i < 3 && <span className="text-dark-slab/15 select-none">|</span>}
-                  </div>
-                ))}
-              </div>
-              <div className="flex items-center justify-center gap-0">
-                {[
-                  { name: "Merit", icon: Scale },
-                  { name: "Vault", icon: Wallet },
-                  { name: "Patron", icon: Handshake },
-                  { name: "Envoy", icon: CalendarCheck },
-                ].map((product, i) => (
-                  <div key={product.name} className="flex items-center">
-                    <div className="flex items-center gap-2 px-4 py-2">
-                      <product.icon className="h-4 w-4 text-sage" />
-                      <span className="text-[14px] font-medium text-nav-text">{product.name}</span>
-                    </div>
-                    {i < 3 && <span className="text-dark-slab/15 select-none">|</span>}
-                  </div>
-                ))}
-              </div>
-            </div>
-
-            {/* Mobile: 2x4 compact grid */}
-            <div className="grid grid-cols-2 gap-2 sm:hidden">
-              {[
-                { name: "Director", icon: LayoutDashboard },
-                { name: "Podium", icon: MessageSquare },
-                { name: "Spotlight", icon: BarChart3 },
-                { name: "Reign", icon: Smartphone },
-                { name: "Merit", icon: Scale },
-                { name: "Vault", icon: Wallet },
-                { name: "Patron", icon: Handshake },
-                { name: "Envoy", icon: CalendarCheck },
-              ].map((product) => (
-                <div
-                  key={product.name}
-                  className="flex items-center justify-center gap-2 rounded-lg border border-border bg-card/60 px-3 py-2.5"
+                { id: "directors", label: "Directors", teaser: "Run your whole program.", Icon: LayoutDashboard },
+                { id: "titleholders", label: "Titleholders", teaser: "Manage your reign.", Icon: CrownIcon },
+                { id: "contestants", label: "Contestants", teaser: "From application to stage.", Icon: Sparkles },
+                { id: "sponsors", label: "Sponsors", teaser: "See your impact.", Icon: Handshake },
+              ].map((p) => (
+                <Link
+                  key={p.id}
+                  href={`/who-its-for/?role=${p.id}`}
+                  className="group flex flex-col items-center gap-3 rounded-2xl border border-border bg-card px-4 py-5 text-center shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-md focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gold focus-visible:ring-offset-2 focus-visible:ring-offset-bg"
                 >
-                  <product.icon className="h-4 w-4 text-sage" />
-                  <span className="text-[13px] font-medium text-nav-text">{product.name}</span>
-                </div>
+                  <span className="flex h-11 w-11 items-center justify-center rounded-full bg-sage/15 text-sage transition-colors group-hover:bg-gold/20 group-hover:text-gold">
+                    <p.Icon className="h-5 w-5" strokeWidth={1.75} />
+                  </span>
+                  <span className="text-[15px] font-semibold tracking-tight text-t1">{p.label}</span>
+                  <span className="text-[12px] leading-snug text-t2">{p.teaser}</span>
+                </Link>
               ))}
             </div>
           </div>
@@ -582,6 +516,9 @@ export default function ReignaraLanding() {
             </Link>
             <Link href="#about" className="text-[14px] font-medium text-nav-text hover:text-t1 transition-colors">
               About
+            </Link>
+            <Link href="/who-its-for" className="text-[14px] font-medium text-nav-text hover:text-t1 transition-colors">
+              Who It&apos;s For
             </Link>
             <Link href="/team" className="text-[14px] font-medium text-nav-text hover:text-t1 transition-colors">
               Team
