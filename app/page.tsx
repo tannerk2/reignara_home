@@ -67,6 +67,12 @@ export default function ReignaraLanding() {
                       About Reignara
                     </Link>
                     <Link
+                      href="/who-its-for"
+                      className="block rounded-xl px-4 py-3 text-[15px] font-medium text-nav-text hover:bg-bg hover:text-t1 transition-colors"
+                    >
+                      Who It&apos;s For
+                    </Link>
+                    <Link
                       href="/team"
                       className="block rounded-xl px-4 py-3 text-[15px] font-medium text-nav-text hover:bg-bg hover:text-t1 transition-colors"
                     >
@@ -142,6 +148,13 @@ export default function ReignaraLanding() {
                 className="rounded-xl border border-border bg-card px-4 py-3 text-[15px] font-medium text-t1"
               >
                 About Reignara
+              </Link>
+              <Link
+                href="/who-its-for"
+                onClick={() => setMobileMenuOpen(false)}
+                className="rounded-xl border border-border bg-card px-4 py-3 text-[15px] font-medium text-t1"
+              >
+                Who It&apos;s For
               </Link>
               <Link
                 href="/team"
@@ -582,6 +595,9 @@ export default function ReignaraLanding() {
             </Link>
             <Link href="#about" className="text-[14px] font-medium text-nav-text hover:text-t1 transition-colors">
               About
+            </Link>
+            <Link href="/who-its-for" className="text-[14px] font-medium text-nav-text hover:text-t1 transition-colors">
+              Who It&apos;s For
             </Link>
             <Link href="/team" className="text-[14px] font-medium text-nav-text hover:text-t1 transition-colors">
               Team
