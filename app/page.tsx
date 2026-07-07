@@ -186,7 +186,7 @@ export default function ReignaraLanding() {
       )}
 
       {/* Hero Section - Centered with Logo */}
-      <section className="mx-auto max-w-7xl px-4 py-16 sm:px-6 sm:py-20 lg:py-28">
+      <section className="mx-auto max-w-7xl px-4 pt-16 pb-8 sm:px-6 sm:pt-20 sm:pb-10 lg:pt-28 lg:pb-10">
         <div className="flex flex-col items-center text-center">
           {/* Large centered logo */}
           <div className="mb-8 sm:mb-10">
@@ -241,7 +241,7 @@ export default function ReignaraLanding() {
       </section>
 
       {/* Elegant Divider */}
-      <div className="mx-auto flex max-w-7xl items-center gap-4 px-4 py-10 sm:gap-6 sm:px-6 sm:py-14">
+      <div className="mx-auto flex max-w-7xl items-center gap-4 px-4 py-3 sm:gap-6 sm:px-6 sm:py-5">
         <span className="h-px flex-1 bg-gradient-to-r from-transparent to-border" />
         <span className="rotate-45 text-sage" aria-hidden="true">
           <span className="block h-1.5 w-1.5 rounded-[1px] bg-sage" />
@@ -250,7 +250,7 @@ export default function ReignaraLanding() {
       </div>
 
       {/* Products Section */}
-      <section id="products" className="mx-auto max-w-7xl px-4 py-16 sm:px-6 sm:py-24">
+      <section id="products" className="mx-auto max-w-7xl px-4 pt-8 pb-16 sm:px-6 sm:pt-10 sm:pb-24">
         {/* Section header */}
         <div className="mb-12 sm:mb-16">
           <p className="mb-4 text-[12px] font-medium uppercase tracking-[0.2em] text-sage">
