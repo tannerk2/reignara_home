@@ -2,9 +2,8 @@
 @import 'tw-animate-css';
 
 @source "../app/**/*.{ts,tsx}";
-@source "../app/team/**/*.{ts,tsx}";
 @source "../components/**/*.{ts,tsx}";
-@source not "../../**";
+@source "../content/**/*.{ts,tsx}";
 
 :root {
   /* Light theme - cream palette */
@@ -45,6 +44,7 @@
 @theme inline {
   --font-sans: var(--font-sans), 'Inter', ui-sans-serif, system-ui, sans-serif;
   --font-display: var(--font-display), 'Bavex', ui-serif, Georgia, serif;
+  --font-serif: var(--font-cormorant), 'Cormorant Garamond', ui-serif, Georgia, serif;
 
   --color-background: var(--background);
   --color-foreground: var(--foreground);

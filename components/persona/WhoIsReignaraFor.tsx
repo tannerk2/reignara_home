@@ -16,11 +16,11 @@ export function WhoIsReignaraFor() {
   }, [])
 
   return (
-    <section className="mx-auto w-full max-w-6xl px-5 py-16 sm:px-8 sm:py-24">
+    <section className="mx-auto w-full max-w-6xl px-5 py-20 sm:px-8 sm:py-28">
       {/* Section header */}
       <div className="flex flex-col items-center text-center">
         <p className="text-xs font-medium uppercase tracking-[0.2em] text-sage">Who it&apos;s for</p>
-        <h2 className="mt-4 max-w-2xl text-balance font-display text-4xl leading-[1.05] tracking-tight text-foreground sm:text-5xl md:text-6xl">
+        <h2 className="mt-4 max-w-2xl text-balance font-serif text-4xl font-medium leading-[1.05] tracking-tight text-foreground sm:text-5xl md:text-6xl">
           One platform, every role in your program.
         </h2>
         <p className="mt-5 max-w-xl text-pretty leading-relaxed text-muted-foreground">
@@ -80,7 +80,7 @@ export function WhoIsReignaraFor() {
         className="mt-16 motion-safe:animate-in motion-safe:fade-in motion-safe:slide-in-from-bottom-3 motion-safe:duration-500"
       >
         <div className="mx-auto max-w-3xl text-center">
-          <h3 className="text-balance font-display text-3xl leading-[1.1] tracking-tight text-foreground sm:text-4xl md:text-[2.75rem]">
+          <h3 className="text-balance font-serif text-3xl font-medium leading-[1.1] tracking-tight text-foreground sm:text-4xl md:text-[2.75rem]">
             {active.headline}
           </h3>
           <div className="mt-6 space-y-4">
@@ -104,7 +104,7 @@ export function WhoIsReignaraFor() {
                   </p>
                 ))}
               </div>
-              <p className="mt-6 text-pretty font-display text-lg italic leading-relaxed text-bg/90">
+              <p className="mt-6 text-pretty font-serif text-lg italic leading-relaxed text-bg/90">
                 {active.foundationReason.split("Director")[0]}
                 <span className="mx-1 inline-flex items-center rounded-full bg-gold px-3 py-0.5 font-sans text-sm font-semibold not-italic text-t1">
                   Director
@@ -140,7 +140,7 @@ export function WhoIsReignaraFor() {
                   >
                     <Icon className="size-5" strokeWidth={1.75} />
                   </span>
-                  <h4 className="mt-5 font-display text-xl leading-snug tracking-tight text-foreground">
+                  <h4 className="mt-5 font-serif text-xl font-medium leading-snug tracking-tight text-foreground">
                     {module.title}
                   </h4>
                   <p className="mt-3 flex-1 text-pretty text-sm leading-relaxed text-muted-foreground">
@@ -151,7 +151,7 @@ export function WhoIsReignaraFor() {
                       <span className="text-xs font-medium uppercase tracking-wider text-muted-foreground/80">
                         We call it
                       </span>
-                      <span className="inline-flex items-center rounded-full bg-gold px-3 py-0.5 font-display text-sm font-semibold text-t1">
+                      <span className="inline-flex items-center rounded-full bg-gold px-3 py-0.5 font-serif text-sm font-semibold text-t1">
                         {module.name}
                       </span>
                     </div>
@@ -169,7 +169,7 @@ export function WhoIsReignaraFor() {
 
         {/* Closing + persona CTA */}
         <div className="mx-auto mt-16 max-w-3xl text-center">
-          <p className="text-balance font-display text-2xl leading-snug text-foreground sm:text-[1.75rem]">
+          <p className="text-balance font-serif text-2xl font-medium leading-snug text-foreground sm:text-[1.75rem]">
             {active.closing}
           </p>
           <a
