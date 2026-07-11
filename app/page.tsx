@@ -42,7 +42,7 @@ export default function ReignaraLanding() {
 
           {/* Desktop nav links */}
           <div className="hidden items-center gap-8 md:flex">
-            <Link href="#products" className="text-[15px] font-medium text-nav-text hover:text-t1 transition-colors">
+            <Link href="/products" className="text-[15px] font-medium text-nav-text hover:text-t1 transition-colors">
               Products
             </Link>
             {/* About dropdown */}
@@ -138,7 +138,7 @@ export default function ReignaraLanding() {
             </button>
             <div className="flex flex-col gap-4">
               <Link
-                href="#products"
+                href="/products"
                 onClick={() => setMobileMenuOpen(false)}
                 className="rounded-xl border border-border bg-card px-4 py-3 text-[15px] font-medium text-t1"
               >
@@ -259,6 +259,13 @@ export default function ReignaraLanding() {
           <h2 className="font-display text-[32px] sm:text-[44px] text-t1">
             Eight tools. One platform.
           </h2>
+          <Link
+            href="/products"
+            className="group mt-5 inline-flex items-center gap-1.5 text-[14px] font-medium text-sage hover:text-t1 transition-colors"
+          >
+            Explore the platform
+            <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
+          </Link>
         </div>
 
         {/* Product cards - 4x2 grid */}
@@ -511,7 +518,7 @@ export default function ReignaraLanding() {
             <span className="font-display text-[20px] text-t1">reignara</span>
           </Link>
           <div className="flex flex-wrap justify-center gap-6 sm:gap-8">
-            <Link href="#products" className="text-[14px] font-medium text-nav-text hover:text-t1 transition-colors">
+            <Link href="/products" className="text-[14px] font-medium text-nav-text hover:text-t1 transition-colors">
               Products
             </Link>
             <Link href="#about" className="text-[14px] font-medium text-nav-text hover:text-t1 transition-colors">

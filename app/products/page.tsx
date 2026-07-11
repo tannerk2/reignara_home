@@ -4,9 +4,12 @@ import { useState } from "react"
 import Link from "next/link"
 import Image from "next/image"
 import { ArrowRight, Menu, X, ChevronDown } from "lucide-react"
-import { WhoIsReignaraFor } from "@/components/persona/WhoIsReignaraFor"
+import { products } from "@/lib/products"
+import { ProductsHero } from "@/components/products/hero"
+import { SectionShell } from "@/components/products/section-shell"
+import { ClosingSection } from "@/components/products/closing-section"
 
-export default function WhoItsForPage() {
+export default function ProductsPage() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
   const [aboutOpen, setAboutOpen] = useState(false)
 
@@ -21,7 +24,7 @@ export default function WhoItsForPage() {
           </Link>
 
           <div className="hidden items-center gap-8 md:flex">
-            <Link href="/products" className="text-[15px] font-medium text-nav-text hover:text-t1 transition-colors">
+            <Link href="/products" className="text-[15px] font-medium text-t1">
               Products
             </Link>
             <div className="relative" onMouseEnter={() => setAboutOpen(true)} onMouseLeave={() => setAboutOpen(false)}>
@@ -35,7 +38,7 @@ export default function WhoItsForPage() {
                     <Link href="/#about" className="block rounded-xl px-4 py-3 text-[15px] font-medium text-nav-text hover:bg-bg hover:text-t1 transition-colors">
                       About reignara
                     </Link>
-                    <Link href="/who-its-for" className="block rounded-xl px-4 py-3 text-[15px] font-medium text-t1 bg-bg">
+                    <Link href="/who-its-for" className="block rounded-xl px-4 py-3 text-[15px] font-medium text-nav-text hover:bg-bg hover:text-t1 transition-colors">
                       Who It&apos;s For
                     </Link>
                     <Link href="/team" className="block rounded-xl px-4 py-3 text-[15px] font-medium text-nav-text hover:bg-bg hover:text-t1 transition-colors">
@@ -112,8 +115,14 @@ export default function WhoItsForPage() {
         </div>
       )}
 
-      {/* Persona experience */}
-      <WhoIsReignaraFor />
+      {/* Product showcase */}
+      <main>
+        <ProductsHero />
+        {products.map((product, i) => (
+          <SectionShell key={product.slug} product={product} index={i} />
+        ))}
+        <ClosingSection />
+      </main>
 
       {/* Footer */}
       <footer className="mx-auto max-w-7xl px-4 pb-8 pt-8 sm:px-6 sm:pb-12">

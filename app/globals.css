@@ -35,6 +35,7 @@
   --sage: #8A9B8E;
   --gold: #C9A87A;
   --dark-slab: #1A1A1A;
+  --ink: #1A1A1A;
   --t1: #1A1A1A;
   --t2: #6B7280;
   --t3: #9CA3AF;
@@ -78,6 +79,7 @@
   --color-sage: var(--sage);
   --color-gold: var(--gold);
   --color-dark-slab: var(--dark-slab);
+  --color-ink: var(--ink);
   --color-t1: var(--t1);
   --color-t2: var(--t2);
   --color-t3: var(--t3);
@@ -90,5 +92,20 @@
   }
   body {
     @apply bg-bg text-t1;
+  }
+}
+
+@layer utilities {
+  .eyebrow {
+    font-family: var(--font-sans), sans-serif;
+    text-transform: uppercase;
+    letter-spacing: 0.2em;
+    font-size: 0.6875rem;
+    font-weight: 500;
+    color: var(--gold);
+  }
+  /* matte print card shadow for flat screenshots / render cards */
+  .print-shadow {
+    box-shadow: 0 1px 2px rgba(26, 26, 26, 0.06), 0 12px 32px rgba(26, 26, 26, 0.1);
   }
 }

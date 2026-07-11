@@ -66,7 +66,7 @@ export default function TeamPage() {
 
           {/* Desktop nav */}
           <div className="hidden items-center gap-8 md:flex">
-            <Link href="/#products" className="text-[15px] font-medium text-nav-text hover:text-t1 transition-colors">
+            <Link href="/products" className="text-[15px] font-medium text-nav-text hover:text-t1 transition-colors">
               Products
             </Link>
             {/* About dropdown */}
@@ -145,7 +145,7 @@ export default function TeamPage() {
             </button>
             <div className="flex flex-col gap-4">
               <Link
-                href="/#products"
+                href="/products"
                 onClick={() => setMobileMenuOpen(false)}
                 className="rounded-xl border border-border bg-card px-4 py-3 text-[15px] font-medium text-t1"
               >
@@ -294,7 +294,7 @@ export default function TeamPage() {
             <span className="font-display text-[20px] text-t1">reignara</span>
           </Link>
           <div className="flex flex-wrap justify-center gap-6 sm:gap-8">
-            <Link href="/#products" className="text-[14px] font-medium text-nav-text hover:text-t1 transition-colors">
+            <Link href="/products" className="text-[14px] font-medium text-nav-text hover:text-t1 transition-colors">
               Products
             </Link>
             <Link href="/#about" className="text-[14px] font-medium text-nav-text hover:text-t1 transition-colors">
