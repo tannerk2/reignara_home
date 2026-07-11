@@ -4,6 +4,7 @@ import { motion, useReducedMotion } from "motion/react"
 import type { Product } from "@/lib/products"
 import { Eyebrow, Headline, TagRow } from "@/components/products/kit"
 import { RenderStage } from "@/components/products/render-stage"
+import { RenderFan } from "@/components/products/render-fan"
 import { cn } from "@/lib/utils"
 
 const spring = { type: "spring" as const, stiffness: 100, damping: 22 }
@@ -49,7 +50,7 @@ export function SectionShell({
       id={product.slug}
       aria-labelledby={`${product.slug}-heading`}
       className={cn(
-        "scroll-mt-24",
+        "scroll-mt-24 overflow-x-clip",
         onDark
           ? "bg-ink text-[#f5f3ef]"
           : product.layout === "standalone"
@@ -70,11 +71,20 @@ export function SectionShell({
 
           {/* Render — 7/12 */}
           <div className={cn("lg:col-span-7", mirrored ? "lg:order-1 lg:col-start-1" : "lg:order-2")}>
-            <RenderStage
-              product={product}
-              onDark={onDark}
-              className={cn("mx-auto", isMobile ? "max-w-sm" : "max-w-none")}
-            />
+            {product.display === "fan" ? (
+              <RenderFan
+                product={product}
+                onDark={onDark}
+                mirrored={mirrored}
+                className={cn("mx-auto", isMobile ? "max-w-xs" : "max-w-none")}
+              />
+            ) : (
+              <RenderStage
+                product={product}
+                onDark={onDark}
+                className={cn("mx-auto", isMobile ? "max-w-sm" : "max-w-none")}
+              />
+            )}
           </div>
         </div>
       </div>

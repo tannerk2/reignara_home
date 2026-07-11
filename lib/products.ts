@@ -35,6 +35,14 @@ export interface Product {
   renderAlt: string
   /** Aspect ratio (width / height) of the hero asset, for placeholder sizing. */
   aspect: number
+  /**
+   * How the render is presented.
+   * "single" (default) shows one device render.
+   * "fan" shows a layered deck of multiple screens, offset and rotated for depth.
+   */
+  display?: "single" | "fan"
+  /** Number of screens in a "fan" display. Files: /renders/{slug}/screen-1.png … */
+  screenCount?: number
   assets: ProductAssets
 }
 
@@ -61,8 +69,10 @@ export const products: Product[] = [
     tags: ["Contestant records", "Production schedule", "Run of show"],
     layout: "standard",
     renderAlt:
-      "Reignara Director dashboard on a laptop, showing the contestant roster and production schedule.",
+      "Reignara Director dashboard, showing the contestant roster and production schedule across several screens.",
     aspect: 16 / 10,
+    display: "fan",
+    screenCount: 3,
     assets: assets("director"),
   },
   {
@@ -75,8 +85,10 @@ export const products: Product[] = [
     tags: ["Offline-first", "Instant tabulation", "Audit trail"],
     layout: "dark",
     renderAlt:
-      "Reignara Merit judging interface on a tablet, showing a scoring rubric and live tabulation.",
+      "Reignara Merit judging interface, showing a scoring rubric and live tabulation across two screens.",
     aspect: 4 / 3,
+    display: "fan",
+    screenCount: 2,
     assets: assets("merit"),
   },
   {
@@ -103,8 +115,10 @@ export const products: Product[] = [
     tags: ["Mobile-first", "Appearance points", "Requirements"],
     layout: "mobile",
     renderAlt:
-      "Reignara Reign mobile app shown on a pair of phones, displaying a titleholder schedule and points.",
+      "Reignara Reign mobile app shown on a fan of three phones, displaying a titleholder schedule and points.",
     aspect: 3 / 4,
+    display: "fan",
+    screenCount: 3,
     assets: assets("reign"),
   },
   {
