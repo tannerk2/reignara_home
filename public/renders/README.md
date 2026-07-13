@@ -13,16 +13,22 @@ There are **two presentation styles**, and they use **different files**:
 
 ## What each product needs
 
-| Product    | Style  | Required files | Aspect (W×H) | Suggested export |
-|------------|--------|----------------|--------------|------------------|
-| director   | **fan** (3) | `screen-1.png`, `screen-2.png`, `screen-3.png` | 16:10 | 2560×1600 each |
-| merit      | **fan** (2) — dark section | `screen-1.png`, `screen-2.png` | 4:3 | 2048×1536 each |
-| podium     | single | `hero.png` | 16:10 | 2560×1600 |
-| reign      | **fan** (3) — phone | `screen-1.png`, `screen-2.png`, `screen-3.png` | 3:4 | 1200×1600 each |
-| spotlight  | single | `hero.png` | 16:10 | 2560×1600 |
-| vault      | single | `hero.png` | 16:10 | 2560×1600 |
-| patron     | single | `hero.png` | 16:10 | 2560×1600 |
-| envoy      | single (standalone card) | `hero.png` | 16:10 | 2560×1600 |
+| Product    | Style  | Required files | Aspect (W×H) |
+|------------|--------|----------------|--------------|
+| director   | **fan** (5) | `screen-1.png` … `screen-5.png` | 16:10 |
+| merit      | **fan** (2) — dark section | `screen-1.png`, `screen-2.png` | 16:10 |
+| podium     | single | `hero.png` | 16:10 |
+| reign      | **fan** (4) — phone | `screen-1.png` … `screen-4.png` | ~9:19.5 (phone) |
+| spotlight  | **fan** (2) | `screen-1.png`, `screen-2.png` | 16:10 |
+| vault      | single | `hero.png` | 16:10 |
+| patron     | single | `hero.png` | 16:10 |
+| envoy      | single (standalone card) | `hero.png` | 16:10 |
+
+The fan supports **2–5 screens**; the spread is normalized so more screens pack
+tighter rather than fanning off-frame. To change a product's count, edit
+`screenCount` (and add/remove `screen-N.png` files) in `lib/products.ts`.
+
+> Podium has no assets yet — it shows the placeholder until a `hero.png` is added.
 
 ## Optional files (single-style products)
 

@@ -12,13 +12,19 @@ const spring = { type: "spring" as const, stiffness: 90, damping: 20 }
  * Per-depth fan geometry. depth 0 = front, higher = further back.
  * `sign` points outward (away from the copy column) so text is never covered:
  * +1 fans up-and-right, -1 fans up-and-left.
+ *
+ * Spread is normalized across the full deck so the total fan stays within the
+ * same envelope regardless of screen count (2–5): more screens pack tighter
+ * rather than fanning off-frame. At 3 screens this matches the original tuning.
  */
-function geometry(depth: number, sign: number) {
+function geometry(depth: number, sign: number, count: number) {
+  const steps = Math.max(1, count - 1)
+  const t = depth / steps // 0 (front) … 1 (deepest)
   return {
-    x: sign * 11 * depth, // % of panel width, outward
-    y: -8 * depth,
-    rotate: sign * 5.5 * depth,
-    scale: 1 - 0.05 * depth,
+    x: sign * 22 * t, // % of panel width, outward
+    y: -16 * t,
+    rotate: sign * 11 * t,
+    scale: 1 - 0.1 * t,
   }
 }
 
@@ -75,6 +81,7 @@ function FanPanel({
   n,
   depth,
   sign,
+  count,
   onDark,
   parallaxY,
 }: {
@@ -82,11 +89,12 @@ function FanPanel({
   n: number
   depth: number
   sign: number
+  count: number
   onDark: boolean
   parallaxY: ReturnType<typeof useTransform<number, number>>
 }) {
   const [failed, setFailed] = useState(false)
-  const g = geometry(depth, sign)
+  const g = geometry(depth, sign, count)
   const isFront = depth === 0
   const src = `/renders/${product.slug}/screen-${n}.png`
 
@@ -146,7 +154,7 @@ export function RenderFan({
 }) {
   const ref = useRef<HTMLDivElement>(null)
   const reduce = useReducedMotion()
-  const count = Math.max(2, Math.min(3, product.screenCount ?? 2))
+  const count = Math.max(2, Math.min(5, product.screenCount ?? 2))
   // Fan outward, away from the copy column: render-on-right fans right, render-on-left fans left.
   const sign = mirrored ? -1 : 1
 
@@ -184,6 +192,7 @@ export function RenderFan({
             n={n}
             depth={depth}
             sign={sign}
+            count={count}
             onDark={onDark}
             parallaxY={tracks[Math.min(depth, tracks.length - 1)]}
           />

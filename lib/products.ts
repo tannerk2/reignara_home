@@ -72,7 +72,7 @@ export const products: Product[] = [
       "Reignara Director dashboard, showing the contestant roster and production schedule across several screens.",
     aspect: 16 / 10,
     display: "fan",
-    screenCount: 3,
+    screenCount: 5,
     assets: assets("director"),
   },
   {
@@ -86,7 +86,7 @@ export const products: Product[] = [
     layout: "dark",
     renderAlt:
       "Reignara Merit judging interface, showing a scoring rubric and live tabulation across two screens.",
-    aspect: 4 / 3,
+    aspect: 16 / 10,
     display: "fan",
     screenCount: 2,
     assets: assets("merit"),
@@ -115,10 +115,10 @@ export const products: Product[] = [
     tags: ["Mobile-first", "Appearance points", "Requirements"],
     layout: "mobile",
     renderAlt:
-      "Reignara Reign mobile app shown on a fan of three phones, displaying a titleholder schedule and points.",
-    aspect: 3 / 4,
+      "Reignara Reign mobile app shown on a fan of four phones, displaying a titleholder schedule and points.",
+    aspect: 1206 / 2622,
     display: "fan",
-    screenCount: 3,
+    screenCount: 4,
     assets: assets("reign"),
   },
   {
@@ -131,8 +131,10 @@ export const products: Product[] = [
     tags: ["Reach", "Engagement", "Growth trends"],
     layout: "standard",
     renderAlt:
-      "Reignara Spotlight analytics dashboard on a laptop, showing audience reach and engagement charts.",
+      "Reignara Spotlight analytics dashboard, showing audience reach and engagement across two screens.",
     aspect: 16 / 10,
+    display: "fan",
+    screenCount: 2,
     assets: assets("spotlight"),
   },
   {
