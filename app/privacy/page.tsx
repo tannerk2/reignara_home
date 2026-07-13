@@ -1,133 +1,12 @@
 "use client"
 
-import { useState } from "react"
-import Link from "next/link"
-import Image from "next/image"
-import { ArrowRight, Menu, X } from "lucide-react"
+import { SiteNav } from "@/components/site/SiteNav"
+import { SiteFooter } from "@/components/site/SiteFooter"
 
 export default function PrivacyPolicyPage() {
-  const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
-
   return (
     <div className="min-h-screen bg-bg">
-      {/* Navigation */}
-      <nav className="sticky top-0 z-50 border-b border-border bg-bg/95 backdrop-blur-sm">
-        <div className="mx-auto flex max-w-7xl items-center justify-between px-4 py-4 sm:px-6">
-          <Link href="/" className="flex items-center gap-2">
-            <Image
-              src="/images/reignara-logo.svg"
-              alt="reignara"
-              width={36}
-              height={36}
-              className="h-8 w-8 sm:h-9 sm:w-9"
-            />
-            <span className="font-display text-[22px] sm:text-[26px] text-t1">reignara</span>
-          </Link>
-
-          {/* Desktop nav links */}
-          <div className="hidden items-center gap-8 md:flex">
-            <Link href="/products" className="text-[15px] font-medium text-nav-text hover:text-t1 transition-colors">
-              Products
-            </Link>
-            <Link href="/#about" className="text-[15px] font-medium text-nav-text hover:text-t1 transition-colors">
-              About
-            </Link>
-            <Link href="/#contact" className="text-[15px] font-medium text-nav-text hover:text-t1 transition-colors">
-              Contact
-            </Link>
-          </div>
-
-          {/* Desktop right side */}
-          <div className="hidden items-center gap-4 md:flex">
-            <Link href="/dashboard" className="text-[15px] font-medium text-nav-text hover:text-t1 transition-colors">
-              Sign In
-            </Link>
-            <Link
-              href="/#early-access"
-              className="group inline-flex items-center gap-2 rounded-full bg-dark-slab px-5 py-3 text-[14px] font-medium text-bg hover:bg-nav-text transition-colors"
-            >
-              Request Early Access
-              <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
-            </Link>
-          </div>
-
-          {/* Mobile hamburger */}
-          <button
-            onClick={() => setMobileMenuOpen(true)}
-            className="flex h-11 w-11 items-center justify-center rounded-full border border-border md:hidden"
-            aria-label="Open menu"
-          >
-            <Menu className="h-5 w-5 text-t1" />
-          </button>
-        </div>
-      </nav>
-
-      {/* Mobile drawer */}
-      {mobileMenuOpen && (
-        <div className="fixed inset-0 z-[60] md:hidden">
-          <div
-            className="absolute inset-0 bg-dark-slab/40"
-            onClick={() => setMobileMenuOpen(false)}
-          />
-          <div className="absolute right-0 top-0 h-full w-[280px] bg-bg p-6 shadow-2xl">
-            <div className="mb-8 flex items-center gap-2">
-              <Image
-                src="/images/reignara-logo.svg"
-                alt="reignara"
-                width={32}
-                height={32}
-                className="h-8 w-8"
-              />
-              <span className="font-display text-[24px] text-t1">reignara</span>
-            </div>
-            <button
-              onClick={() => setMobileMenuOpen(false)}
-              className="absolute right-6 top-6 flex h-11 w-11 items-center justify-center rounded-full border border-border"
-              aria-label="Close menu"
-            >
-              <X className="h-5 w-5 text-t1" />
-            </button>
-            <div className="flex flex-col gap-4">
-              <Link
-                href="/products"
-                onClick={() => setMobileMenuOpen(false)}
-                className="rounded-xl border border-border bg-card px-4 py-3 text-[15px] font-medium text-t1"
-              >
-                Products
-              </Link>
-              <Link
-                href="/#about"
-                onClick={() => setMobileMenuOpen(false)}
-                className="rounded-xl border border-border bg-card px-4 py-3 text-[15px] font-medium text-t1"
-              >
-                About
-              </Link>
-              <Link
-                href="/#contact"
-                onClick={() => setMobileMenuOpen(false)}
-                className="rounded-xl border border-border bg-card px-4 py-3 text-[15px] font-medium text-t1"
-              >
-                Contact
-              </Link>
-              <Link
-                href="/dashboard"
-                onClick={() => setMobileMenuOpen(false)}
-                className="rounded-xl border border-border bg-card px-4 py-3 text-[15px] font-medium text-t1"
-              >
-                Sign In
-              </Link>
-              <Link
-                href="/#early-access"
-                onClick={() => setMobileMenuOpen(false)}
-                className="group mt-2 inline-flex items-center justify-center gap-2 rounded-full bg-dark-slab px-5 py-3.5 text-[15px] font-medium text-bg"
-              >
-                Request Early Access
-                <ArrowRight className="h-4 w-4" />
-              </Link>
-            </div>
-          </div>
-        </div>
-      )}
+      <SiteNav />
 
       {/* Header */}
       <section className="mx-auto max-w-3xl px-4 pt-12 sm:px-6 sm:pt-16 lg:pt-20">
@@ -668,41 +547,7 @@ export default function PrivacyPolicyPage() {
         </div>
       </section>
 
-      {/* Footer */}
-      <footer className="mx-auto max-w-7xl px-4 pb-8 pt-8 sm:px-6 sm:pb-12">
-        <div className="flex flex-col items-center gap-6 border-t border-border pt-8 sm:flex-row sm:justify-between">
-          <Link href="/" className="flex items-center gap-2">
-            <Image
-              src="/images/reignara-logo.svg"
-              alt="reignara"
-              width={28}
-              height={28}
-              className="h-7 w-7"
-            />
-            <span className="font-display text-[20px] text-t1">reignara</span>
-          </Link>
-          <div className="flex flex-wrap justify-center gap-6 sm:gap-8">
-            <Link href="/products" className="text-[14px] font-medium text-nav-text hover:text-t1 transition-colors">
-              Products
-            </Link>
-            <Link href="/#about" className="text-[14px] font-medium text-nav-text hover:text-t1 transition-colors">
-              About
-            </Link>
-            <Link href="/#contact" className="text-[14px] font-medium text-nav-text hover:text-t1 transition-colors">
-              Contact
-            </Link>
-            <Link href="/support" className="text-[14px] font-medium text-nav-text hover:text-t1 transition-colors">
-              Support
-            </Link>
-            <Link href="/privacy" className="text-[14px] font-medium text-nav-text hover:text-t1 transition-colors">
-              Privacy
-            </Link>
-          </div>
-          <p className="text-[13px] text-t2">
-            © 2026 reignara. All rights reserved.
-          </p>
-        </div>
-      </footer>
+      <SiteFooter />
 
       {/* Typography for the policy content */}
       <style jsx global>{`
