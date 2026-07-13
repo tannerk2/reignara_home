@@ -72,8 +72,10 @@ const faqs: Faq[] = [
     q: "Do titleholders and contestants need their own accounts?",
     a: (
       <>
-        Yes. Each person gets their own secure login that connects to your program, so directors aren&apos;t
-        re-entering information and everyone sees exactly what&apos;s relevant to them.
+        No — only the director purchases Reignara. When a director brings their program on board, everyone
+        connected to it is included at no extra cost: titleholders, contestants, judges, and sponsors each
+        get their own secure login to the director&apos;s program. There&apos;s nothing for them to buy or set
+        up — they simply sign in and see exactly what&apos;s relevant to them.
       </>
     ),
   },
