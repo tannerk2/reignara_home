@@ -40,6 +40,27 @@ function json(statusCode, obj) {
   return { statusCode, headers: { "content-type": "application/json" }, body: JSON.stringify(obj) };
 }
 
+async function sendEmail(apiKey, payload) {
+  return fetch("https://api.brevo.com/v3/smtp/email", {
+    method: "POST",
+    headers: { "api-key": apiKey, "content-type": "application/json", accept: "application/json" },
+    body: JSON.stringify(payload),
+  });
+}
+
+// Friendly confirmation sent back to the person who submitted the form.
+function confirmationHtml(name) {
+  const first = esc(String(name).trim().split(/\s+/)[0] || "there");
+  return `
+  <div style="font-family:Arial,Helvetica,sans-serif;font-size:15px;line-height:1.6;color:#333;max-width:520px;">
+    <p style="font-family:Georgia,serif;font-size:22px;color:#1a1a1a;margin:0 0 16px;">Thank you, ${first}.</p>
+    <p style="margin:0 0 14px;">We&rsquo;ve received your message and someone from the reignara team will be in touch soon.</p>
+    <p style="margin:0 0 14px;">In the meantime, feel free to explore what we&rsquo;re building at
+      <a href="https://reignara.com" style="color:#a67c2e;text-decoration:none;">reignara.com</a>.</p>
+    <p style="margin:24px 0 0;color:#8a8a84;">&mdash; The reignara team</p>
+  </div>`;
+}
+
 exports.handler = async (event) => {
   let body;
   try {
@@ -88,28 +109,48 @@ exports.handler = async (event) => {
     <p style="font-family:Arial,sans-serif;font-size:14px;color:#333;white-space:pre-wrap;margin:16px 0 0;">${esc(message)}</p>
   `;
 
-  const payload = {
-    sender: { name: process.env.SENDER_NAME || "Reignara", email: process.env.SENDER_EMAIL },
-    to: [{ email: process.env.TO_EMAIL }],
-    replyTo: { email, name },
-    subject: `New inquiry from ${name}`,
-    htmlContent: html,
-  };
+  const senderName = process.env.SENDER_NAME || "Reignara";
+  const senderEmail = process.env.SENDER_EMAIL;
 
+  // Team recipients: TO_EMAIL is a comma-separated list.
+  const team = String(process.env.TO_EMAIL || "")
+    .split(",")
+    .map((s) => s.trim())
+    .filter(Boolean)
+    .map((e) => ({ email: e }));
+  const replyToTeam = process.env.REPLY_TO_EMAIL || (team[0] && team[0].email);
+
+  // 1) Notify the team. Reply-To is the submitter, so a reply goes straight to them.
   try {
-    const res = await fetch("https://api.brevo.com/v3/smtp/email", {
-      method: "POST",
-      headers: { "api-key": apiKey, "content-type": "application/json", accept: "application/json" },
-      body: JSON.stringify(payload),
+    const res = await sendEmail(apiKey, {
+      sender: { name: senderName, email: senderEmail },
+      to: team,
+      replyTo: { email, name },
+      subject: `New inquiry from ${name}`,
+      htmlContent: html,
     });
     if (!res.ok) {
-      const text = await res.text();
-      console.error("Brevo API error:", res.status, text);
+      console.error("Brevo notify error:", res.status, await res.text());
       return json(502, { success: false });
     }
-    return json(200, { success: true });
   } catch (e) {
-    console.error("Send failed:", e);
+    console.error("Notify send failed:", e);
     return json(500, { success: false });
   }
+
+  // 2) Send the submitter a confirmation (best-effort; never fail the request on this).
+  try {
+    const res = await sendEmail(apiKey, {
+      sender: { name: senderName, email: senderEmail },
+      to: [{ email, name }],
+      replyTo: { email: replyToTeam },
+      subject: "Thanks for reaching out to Reignara",
+      htmlContent: confirmationHtml(name),
+    });
+    if (!res.ok) console.error("Confirmation send error:", res.status, await res.text());
+  } catch (e) {
+    console.error("Confirmation send failed:", e);
+  }
+
+  return json(200, { success: true });
 };

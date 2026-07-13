@@ -29,6 +29,6 @@ new FormStack(app, "ReignaraLandingFormStack", {
   brevoSecretName: "reignara/brevo-api-key",
   senderEmail: "no-reply@reignara.com",
   senderName: "Reignara",
-  toEmail: "benson@reignara.com",
+  toEmail: "benson@reignara.com,keylee@reignara.com",
   allowedOrigins: ["https://reignara.com", "https://www.reignara.com"],
 });
