@@ -41,7 +41,7 @@ export default function SupportPage() {
             <div className="mb-4 flex h-11 w-11 items-center justify-center rounded-full bg-sage/10">
               <Mail className="h-5 w-5 text-sage" />
             </div>
-            <h2 className="font-display text-[20px] text-t1">Email support</h2>
+            <h2 className="font-serif text-[22px] font-medium text-t1">Email support</h2>
             <p className="mt-2 flex-1 text-[14px] leading-relaxed text-t2">
               The fastest way to get a real answer. Send us anything — questions, bugs, feature ideas.
             </p>
@@ -55,7 +55,7 @@ export default function SupportPage() {
             <div className="mb-4 flex h-11 w-11 items-center justify-center rounded-full bg-sage/10">
               <Clock className="h-5 w-5 text-sage" />
             </div>
-            <h2 className="font-display text-[20px] text-t1">Response times</h2>
+            <h2 className="font-serif text-[22px] font-medium text-t1">Response times</h2>
             <p className="mt-2 flex-1 text-[14px] leading-relaxed text-t2">
               We respond within one business day, Monday through Friday, 9am to 5pm Mountain Time.
             </p>
@@ -71,7 +71,7 @@ export default function SupportPage() {
             <div className="flex h-10 w-10 items-center justify-center rounded-full bg-sage/10">
               <LifeBuoy className="h-5 w-5 text-sage" />
             </div>
-            <h2 className="font-display text-[24px] sm:text-[28px] text-t1">What to include in your message</h2>
+            <h2 className="font-serif text-[26px] font-medium sm:text-[30px] text-t1">What to include in your message</h2>
           </div>
           <p className="text-[15px] leading-relaxed text-t2">
             A little context helps us help you faster. When you reach out, please share:
@@ -100,7 +100,7 @@ export default function SupportPage() {
           <div className="flex h-10 w-10 items-center justify-center rounded-full bg-sage/10">
             <HelpCircle className="h-5 w-5 text-sage" />
           </div>
-          <h2 className="font-display text-[28px] sm:text-[32px] text-t1">Common questions</h2>
+          <h2 className="font-serif text-[30px] font-medium sm:text-[34px] text-t1">Common questions</h2>
         </div>
 
         <div className="space-y-4">
@@ -206,7 +206,7 @@ function FaqItem({
           <div className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-sage/10">
             {icon}
           </div>
-          <h3 className="text-[16px] sm:text-[17px] font-medium text-t1">{question}</h3>
+          <h3 className="font-serif text-[18px] sm:text-[20px] font-medium text-t1">{question}</h3>
         </div>
         <span className="flex h-7 w-7 shrink-0 items-center justify-center rounded-full border border-border text-t2 transition-transform group-open:rotate-45">
           <svg width="12" height="12" viewBox="0 0 12 12" fill="none" aria-hidden="true">
