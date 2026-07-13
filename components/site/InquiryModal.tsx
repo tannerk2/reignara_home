@@ -3,11 +3,9 @@
 import { useEffect, useRef, useState } from "react"
 import { X, ArrowRight, Check } from "lucide-react"
 
-// Web3Forms access key — a free, backend-less form endpoint for static sites.
-// Get one instantly at https://web3forms.com (enter benson@reignara.com; they
-// email you a key), then paste it here. Until then, the form shows a graceful
-// "email us" fallback instead of silently dropping submissions.
-const WEB3FORMS_ACCESS_KEY = "REPLACE_WITH_WEB3FORMS_ACCESS_KEY"
+// Serverless endpoint (AWS Lambda Function URL) that emails the inquiry via
+// Brevo. The Brevo API key lives server-side in Secrets Manager, never here.
+const INQUIRY_ENDPOINT = "https://75073tc1h7.execute-api.us-west-2.amazonaws.com/inquiry"
 const CONTACT_EMAIL = "benson@reignara.com"
 
 const HASHES = new Set(["#request", "#demo", "#contact", "#early-access"])
@@ -58,24 +56,14 @@ export function InquiryModal() {
     const form = e.currentTarget
     const data = Object.fromEntries(new FormData(form).entries())
     setStatus("submitting")
-
-    if (WEB3FORMS_ACCESS_KEY.startsWith("REPLACE_")) {
-      setStatus("error")
-      return
-    }
     try {
-      const res = await fetch("https://api.web3forms.com/submit", {
+      const res = await fetch(INQUIRY_ENDPOINT, {
         method: "POST",
-        headers: { "Content-Type": "application/json", Accept: "application/json" },
-        body: JSON.stringify({
-          access_key: WEB3FORMS_ACCESS_KEY,
-          subject: "New reignara inquiry",
-          from_name: "reignara.com",
-          ...data,
-        }),
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(data),
       })
-      const json = await res.json()
-      setStatus(json.success ? "success" : "error")
+      const json = await res.json().catch(() => ({ success: false }))
+      setStatus(res.ok && json.success ? "success" : "error")
     } catch {
       setStatus("error")
     }
@@ -149,6 +137,16 @@ export function InquiryModal() {
               <Field label="Message" required>
                 <textarea name="message" required rows={4} className={`${inputCls} resize-none`} placeholder="What would you like to know?" />
               </Field>
+
+              {/* Honeypot — hidden from people, catches bots */}
+              <input
+                type="text"
+                name="company"
+                tabIndex={-1}
+                autoComplete="off"
+                aria-hidden="true"
+                className="pointer-events-none absolute left-[-9999px] h-0 w-0 opacity-0"
+              />
 
               {status === "error" && (
                 <p className="text-[14px] leading-relaxed text-destructive">

@@ -2,6 +2,7 @@
 import * as cdk from "aws-cdk-lib";
 import { CertStack } from "../lib/cert-stack";
 import { SiteStack } from "../lib/site-stack";
+import { FormStack } from "../lib/form-stack";
 
 const app = new cdk.App();
 
@@ -21,4 +22,13 @@ new SiteStack(app, "ReignaraLandingSiteStack", {
   domainName,
   certificate: certStack.certificate,
   crossRegionReferences: true,
+});
+
+new FormStack(app, "ReignaraLandingFormStack", {
+  env: { account, region: siteRegion },
+  brevoSecretName: "reignara/brevo-api-key",
+  senderEmail: "info@reignara.com",
+  senderName: "Reignara",
+  toEmail: "benson@reignara.com",
+  allowedOrigins: ["https://reignara.com", "https://www.reignara.com"],
 });
