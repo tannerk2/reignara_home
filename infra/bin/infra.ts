@@ -27,7 +27,7 @@ new SiteStack(app, "ReignaraLandingSiteStack", {
 new FormStack(app, "ReignaraLandingFormStack", {
   env: { account, region: siteRegion },
   brevoSecretName: "reignara/brevo-api-key",
-  senderEmail: "info@reignara.com",
+  senderEmail: "no-reply@reignara.com",
   senderName: "Reignara",
   toEmail: "benson@reignara.com",
   allowedOrigins: ["https://reignara.com", "https://www.reignara.com"],
