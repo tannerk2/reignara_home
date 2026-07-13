@@ -126,14 +126,21 @@ function FanPanel({
           {failed ? (
             <FanPlaceholder product={product} n={n} onDark={onDark} />
           ) : (
-            <Image
-              src={src || "/placeholder.svg"}
-              alt={isFront ? product.renderAlt : ""}
-              fill
-              sizes="(max-width: 768px) 80vw, 42vw"
-              className="object-contain"
-              onError={() => setFailed(true)}
-            />
+            <div
+              className={cn(
+                "relative h-full w-full overflow-hidden rounded-xl border",
+                onDark ? "border-white/15" : "border-border",
+              )}
+            >
+              <Image
+                src={src || "/placeholder.svg"}
+                alt={isFront ? product.renderAlt : ""}
+                fill
+                sizes="(max-width: 768px) 80vw, 42vw"
+                className="object-cover"
+                onError={() => setFailed(true)}
+              />
+            </div>
           )}
         </div>
       </div>

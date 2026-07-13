@@ -1,13 +1,11 @@
 "use client"
 
 import { motion, useReducedMotion } from "motion/react"
-import { productBySlug } from "@/lib/products"
 import { Eyebrow } from "@/components/products/kit"
-import { RenderStage } from "@/components/products/render-stage"
+import { HeroCarousel } from "@/components/products/hero-carousel"
 
 export function ProductsHero() {
   const reduce = useReducedMotion()
-  const director = productBySlug.director
 
   const rise = (delay: number) => ({
     initial: reduce ? { opacity: 0 } : { opacity: 0, y: 40 },
@@ -38,8 +36,8 @@ export function ProductsHero() {
         Software built for the people who build pageants.
       </motion.p>
 
-      <motion.div {...rise(0.28)} className="mt-14 w-full max-w-5xl">
-        <RenderStage product={director} className="mx-auto" />
+      <motion.div {...rise(0.28)} className="mt-14 w-full max-w-6xl">
+        <HeroCarousel />
       </motion.div>
     </section>
   )

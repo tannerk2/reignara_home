@@ -122,13 +122,19 @@ export function RenderStage({
             <source src={product.assets.heroVideo} type="video/webm" />
           </video>
         ) : (
-          <div className="relative w-full" style={{ aspectRatio: String(product.aspect) }}>
+          <div
+            className={cn(
+              "relative w-full overflow-hidden rounded-xl border",
+              onDark ? "border-white/15" : "border-border",
+            )}
+            style={{ aspectRatio: String(product.aspect) }}
+          >
             <Image
               src={product.assets.hero}
               alt={product.renderAlt}
               fill
               sizes="(max-width: 768px) 90vw, 55vw"
-              className="object-contain"
+              className="object-cover"
               onError={() => setHeroFailed(true)}
               priority={product.slug === "director"}
             />
