@@ -58,7 +58,12 @@ export function SectionShell({
             : "bg-background",
       )}
     >
-      <div className={cn("mx-auto max-w-7xl px-6 md:px-10", onDark ? "py-32 md:py-44" : "py-24 md:py-40")}>
+      <div
+        className={cn(
+          "mx-auto max-w-7xl px-6 md:px-10",
+          onDark ? "py-20 sm:py-32 md:py-44" : "py-16 sm:py-24 md:py-40",
+        )}
+      >
         <div className="grid grid-cols-1 items-center gap-14 md:gap-16 lg:grid-cols-12 lg:gap-12">
           {/* Copy — 5/12 */}
           <div className={cn("lg:col-span-5", mirrored ? "lg:order-2 lg:col-start-8" : "lg:order-1")}>

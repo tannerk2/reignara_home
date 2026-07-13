@@ -122,12 +122,18 @@ export function HeroCarousel() {
                 >
                   <div
                     className={cn(
-                      "relative h-[60vh] max-h-[700px] min-h-[300px] overflow-hidden rounded-md border border-border bg-card",
+                      "relative overflow-hidden rounded-md border border-border bg-card",
                       isCenter
                         ? "shadow-[0_36px_70px_-28px_rgba(26,26,26,0.4)]"
                         : "shadow-[0_18px_40px_-24px_rgba(26,26,26,0.35)]",
                     )}
-                    style={{ aspectRatio: String(shot.aspect) }}
+                    style={{
+                      aspectRatio: String(shot.aspect),
+                      // Cap by height on desktop, by viewport width on mobile so wide
+                      // screenshots always fit the screen instead of being clipped.
+                      height: `min(60vh, calc((100vw - 3rem) / ${shot.aspect}))`,
+                      maxHeight: "700px",
+                    }}
                   >
                     <Image
                       src={shot.src}

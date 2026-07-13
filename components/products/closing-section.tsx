@@ -10,7 +10,7 @@ export function ClosingSection() {
     <section
       id="demo"
       aria-labelledby="closing-heading"
-      className="bg-background px-6 py-32 text-center md:px-10 md:py-48"
+      className="bg-background px-6 py-24 text-center sm:py-32 md:px-10 md:py-48"
     >
       <motion.div
         initial={reduce ? { opacity: 0 } : { opacity: 0, y: 24 }}

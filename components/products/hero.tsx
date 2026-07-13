@@ -24,7 +24,7 @@ export function ProductsHero() {
 
       <motion.h1
         {...rise(0.08)}
-        className="mt-6 max-w-4xl text-balance font-serif text-6xl font-semibold leading-[0.98] tracking-tight md:text-8xl"
+        className="mt-6 max-w-4xl text-balance font-serif text-5xl font-semibold leading-[1.0] tracking-tight sm:text-6xl md:text-8xl"
       >
         The stage is set.
       </motion.h1>
