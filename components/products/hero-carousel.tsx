@@ -60,7 +60,7 @@ export function HeroCarousel() {
     if (index > shots.length - 1) setIndex(Math.max(0, shots.length - 1))
   }, [shots.length, index])
 
-  const step = Math.min(stageW * 0.46, 460)
+  const step = Math.min(stageW * 0.5, 560)
   const clamp = (i: number) => Math.min(shots.length - 1, Math.max(0, i))
   const go = (dir: number) => setIndex((i) => clamp(i + dir))
   const current = shots[index]
@@ -69,7 +69,7 @@ export function HeroCarousel() {
     <div className="w-full">
       <div
         ref={stageRef}
-        className="relative mx-auto h-[38vh] max-h-[460px] min-h-[240px] w-full overflow-hidden"
+        className="relative mx-auto h-[66vh] max-h-[760px] min-h-[320px] w-full overflow-hidden"
         role="group"
         aria-roledescription="carousel"
         aria-label="Product previews"
@@ -122,7 +122,7 @@ export function HeroCarousel() {
                 >
                   <div
                     className={cn(
-                      "relative h-[34vh] max-h-[420px] min-h-[220px] overflow-hidden rounded-xl border border-border bg-card",
+                      "relative h-[60vh] max-h-[700px] min-h-[300px] overflow-hidden rounded-md border border-border bg-card",
                       isCenter
                         ? "shadow-[0_36px_70px_-28px_rgba(26,26,26,0.4)]"
                         : "shadow-[0_18px_40px_-24px_rgba(26,26,26,0.35)]",

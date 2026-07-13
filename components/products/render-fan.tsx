@@ -128,7 +128,7 @@ function FanPanel({
           ) : (
             <div
               className={cn(
-                "relative h-full w-full overflow-hidden rounded-xl border",
+                "relative h-full w-full overflow-hidden rounded-md border",
                 onDark ? "border-white/15" : "border-border",
               )}
             >

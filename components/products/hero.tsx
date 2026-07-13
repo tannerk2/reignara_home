@@ -36,7 +36,7 @@ export function ProductsHero() {
         Software built for the people who build pageants.
       </motion.p>
 
-      <motion.div {...rise(0.28)} className="mt-14 w-full max-w-6xl">
+      <motion.div {...rise(0.28)} className="mt-14 w-full max-w-7xl">
         <HeroCarousel />
       </motion.div>
     </section>
