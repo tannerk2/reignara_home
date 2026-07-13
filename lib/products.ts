@@ -115,10 +115,10 @@ export const products: Product[] = [
     tags: ["Mobile-first", "Appearance points", "Requirements"],
     layout: "mobile",
     renderAlt:
-      "Reignara Reign mobile app shown on a fan of four phones, displaying a titleholder schedule and points.",
+      "Reignara Reign mobile app shown on a fan of three phones, displaying a titleholder schedule and points.",
     aspect: 1206 / 2622,
     display: "fan",
-    screenCount: 4,
+    screenCount: 3,
     assets: assets("reign"),
   },
   {
