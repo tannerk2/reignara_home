@@ -57,7 +57,7 @@ function confirmationHtml(name) {
     <p style="margin:0 0 14px;">We&rsquo;ve received your message and someone from the reignara team will be in touch soon.</p>
     <p style="margin:0 0 14px;">In the meantime, feel free to explore what we&rsquo;re building at
       <a href="https://reignara.com" style="color:#a67c2e;text-decoration:none;">reignara.com</a>.</p>
-    <p style="margin:24px 0 0;color:#8a8a84;">&mdash; The reignara team</p>
+    <p style="margin:24px 0 0;color:#8a8a84;">&mdash; The Reignara team</p>
   </div>`;
 }
 

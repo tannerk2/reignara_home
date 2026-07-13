@@ -19,7 +19,6 @@ export function SiteNav({
 }) {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
   const [whoOpen, setWhoOpen] = useState(false)
-  const [aboutOpen, setAboutOpen] = useState(false)
 
   const topLink = (isActive: boolean) =>
     cn("text-[15px] font-medium transition-colors", isActive ? "text-t1" : "text-nav-text hover:text-t1")
@@ -64,26 +63,6 @@ export function SiteNav({
                         {p.label}
                       </Link>
                     ))}
-                  </div>
-                </div>
-              )}
-            </div>
-
-            {/* About dropdown */}
-            <div className="relative" onMouseEnter={() => setAboutOpen(true)} onMouseLeave={() => setAboutOpen(false)}>
-              <button className={cn("flex items-center gap-1", topLink(active === "team"))} aria-haspopup="true" aria-expanded={aboutOpen}>
-                About
-                <ChevronDown className={`h-4 w-4 transition-transform ${aboutOpen ? "rotate-180" : ""}`} />
-              </button>
-              {aboutOpen && (
-                <div className="absolute left-1/2 top-full z-50 w-56 -translate-x-1/2 pt-3">
-                  <div className="overflow-hidden rounded-2xl border border-border bg-card p-2 shadow-xl">
-                    <Link href="/who-its-for/directors" className={dropItem(false)}>
-                      About reignara
-                    </Link>
-                    <Link href="/team" className={dropItem(active === "team")}>
-                      Our Team
-                    </Link>
                   </div>
                 </div>
               )}
@@ -150,12 +129,6 @@ export function SiteNav({
                   </Link>
                 ))}
               </div>
-              <Link href="/who-its-for/directors" onClick={() => setMobileMenuOpen(false)} className="rounded-xl border border-border bg-card px-4 py-3 text-[15px] font-medium text-t1">
-                About reignara
-              </Link>
-              <Link href="/team" onClick={() => setMobileMenuOpen(false)} className="rounded-xl border border-border bg-card px-4 py-3 text-[15px] font-medium text-t1">
-                Our Team
-              </Link>
               <Link href="/faq" onClick={() => setMobileMenuOpen(false)} className="rounded-xl border border-border bg-card px-4 py-3 text-[15px] font-medium text-t1">
                 FAQ
               </Link>

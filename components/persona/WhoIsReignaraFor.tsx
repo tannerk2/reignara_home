@@ -24,7 +24,7 @@ export function WhoIsReignaraFor() {
           One platform, every role in your program.
         </h2>
         <p className="mt-5 max-w-xl text-pretty leading-relaxed text-muted-foreground">
-          Everyone runs on the same connected foundation. Choose your role to see exactly how reignara works for you.
+          Everyone runs on the same connected foundation. Choose your role to see exactly how Reignara works for you.
         </p>
       </div>
 

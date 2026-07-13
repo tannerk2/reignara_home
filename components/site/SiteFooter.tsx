@@ -32,7 +32,7 @@ export function SiteFooter() {
             Privacy
           </Link>
         </div>
-        <p className="text-[13px] text-t2">© 2026 reignara. All rights reserved.</p>
+        <p className="text-[13px] text-t2">© 2026 Reignara. All rights reserved.</p>
       </div>
     </footer>
   )

@@ -16,7 +16,7 @@ export async function generateMetadata({
   const { persona } = await params
   const p = personas.find((x) => x.id === persona)
   return {
-    title: p ? `reignara for ${p.label}` : "Who It's For — reignara",
+    title: p ? `Reignara for ${p.label}` : "Who It's For — Reignara",
     description: p?.headline,
   }
 }

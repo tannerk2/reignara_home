@@ -5,28 +5,28 @@ import { SiteNav } from "@/components/site/SiteNav"
 import { SiteFooter } from "@/components/site/SiteFooter"
 
 export const metadata: Metadata = {
-  title: "FAQ — reignara",
-  description: "Answers to common questions about reignara — the operating platform for pageant programs.",
+  title: "FAQ — Reignara",
+  description: "Answers to common questions about Reignara — the operating platform for pageant programs.",
 }
 
 type Faq = { q: string; a: React.ReactNode }
 
 const faqs: Faq[] = [
   {
-    q: "What is reignara?",
+    q: "What is Reignara?",
     a: (
       <>
-        reignara is the operating platform for pageant programs — one connected system for directors,
+        Reignara is the operating platform for pageant programs — one connected system for directors,
         titleholders, contestants, and sponsors. It replaces the patchwork of spreadsheets, group texts,
         and one-off tools with software built specifically for how pageant programs actually run.
       </>
     ),
   },
   {
-    q: "Who is reignara for?",
+    q: "Who is Reignara for?",
     a: (
       <>
-        Directors run their entire program on reignara, and everyone connected to that program —
+        Directors run their entire program on Reignara, and everyone connected to that program —
         titleholders, contestants, and sponsors — gets tools tailored to their role. See{" "}
         <Link href="/who-its-for/directors" className="text-sage underline hover:text-t1">
           who it&apos;s for
@@ -51,7 +51,7 @@ const faqs: Faq[] = [
     ),
   },
   {
-    q: "Is reignara available yet?",
+    q: "Is Reignara available yet?",
     a: (
       <>
         We&apos;re onboarding programs through early access right now. Request access and we&apos;ll set up
@@ -94,7 +94,7 @@ const faqs: Faq[] = [
     q: "Can we bring over our existing data?",
     a: (
       <>
-        Yes. Most programs come to reignara from spreadsheets and a mix of tools — we help you bring that
+        Yes. Most programs come to Reignara from spreadsheets and a mix of tools — we help you bring that
         information over during onboarding so you&apos;re not starting from scratch.
       </>
     ),
@@ -114,7 +114,7 @@ const faqs: Faq[] = [
     a: (
       <>
         Request early access below. We&apos;ll reach out to schedule a walkthrough and help you set up your
-        program on reignara.
+        program on Reignara.
       </>
     ),
   },
@@ -132,7 +132,7 @@ export default function FaqPage() {
           Questions, answered
         </h1>
         <p className="mx-auto mt-5 max-w-2xl text-[17px] sm:text-[18px] leading-relaxed text-t2">
-          The essentials on what reignara is, who it&apos;s for, and how to get started. Don&apos;t see your
+          The essentials on what Reignara is, who it&apos;s for, and how to get started. Don&apos;t see your
           question? We&apos;re happy to help.
         </p>
       </section>

@@ -51,7 +51,7 @@ export const personas: Persona[] = [
     label: "Directors",
     icon: LayoutDashboard,
     teaser: "Run your whole program.",
-    headline: "Reignara is the operating system for your pageant program.",
+    headline: "reignara is the operating system for your pageant program.",
     intro: [
       "Running a pageant program means being the applications team, the communications department, the scorekeeper, the accountant, the sponsor relations manager, and the historian — often all before lunch. Most directors are stitching that together across six different tools that were never built to talk to each other.",
       "Reignara replaces the patchwork with one connected system, built specifically for how pageant programs actually run.",
@@ -124,7 +124,7 @@ export const personas: Persona[] = [
     label: "Titleholders",
     icon: CrownIcon,
     teaser: "Manage your reign.",
-    headline: "Your crown comes with a full calendar. Reignara helps you actually manage it.",
+    headline: "Your crown comes with a full calendar. reignara helps you actually manage it.",
     intro: [
       "The moment you're crowned, the job changes. Appearances, community service, sponsor commitments, media requests, deadlines from your director — it all lands on you at once, and most titleholders end up managing it in a notes app, a paper planner, and a memory that's already stretched thin.",
       "Reignara gives you a real system for your reign, so you can show up prepared instead of scrambling.",
@@ -170,7 +170,7 @@ export const personas: Persona[] = [
       },
     ],
     closing: "You earned this title. Reignara helps you carry it with the same confidence you competed with.",
-    cta: { label: "Bring reignara to your program", href: mailto("Reignara — A titleholder would love this for our program") },
+    cta: { label: "Bring Reignara to your program", href: mailto("Reignara — A titleholder would love this for our program") },
   },
   {
     id: "contestants",
@@ -207,7 +207,7 @@ export const personas: Persona[] = [
     ],
     closing:
       "Reignara is built so you can spend your energy preparing to compete — not figuring out how to compete.",
-    cta: { label: "Tell your director about reignara", href: mailto("Reignara — A contestant thinks our program should see this") },
+    cta: { label: "Tell your director about Reignara", href: mailto("Reignara — A contestant thinks our program should see this") },
   },
   {
     id: "sponsors",
@@ -251,6 +251,6 @@ export const personas: Persona[] = [
       },
     ],
     closing: "Reignara helps pageant programs treat their sponsors like partners, because that's what you are.",
-    cta: { label: "Recommend reignara to your program", href: mailto("Reignara — A sponsor recommends this for the program we support") },
+    cta: { label: "Recommend Reignara to your program", href: mailto("Reignara — A sponsor recommends this for the program we support") },
   },
 ]

@@ -78,7 +78,7 @@ export default function SupportPage() {
           </p>
           <ul className="mt-5 space-y-3">
             {[
-              "Your name and the email tied to your reignara account",
+              "Your name and the email tied to your Reignara account",
               "Which product you're using (Director, Reign, etc.) and the platform (web, iOS, Android)",
               "What you were trying to do and what happened instead",
               "Steps to reproduce, if it's a bug",
