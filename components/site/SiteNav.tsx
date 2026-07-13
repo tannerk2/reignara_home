@@ -7,14 +7,14 @@ import { ArrowRight, Menu, X, ChevronDown } from "lucide-react"
 import { personas } from "@/content/personas"
 import { cn } from "@/lib/utils"
 
-type ActiveKey = "products" | "who" | "team" | "contact" | undefined
+type ActiveKey = "products" | "who" | "team" | "faq" | "contact" | undefined
 
 export function SiteNav({
   active,
   activePersona,
 }: {
   active?: ActiveKey
-  /** persona id ("directors"…) or "overview" when on a Who It's For page */
+  /** persona id ("directors"…) when on a Who It's For page */
   activePersona?: string
 }) {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
@@ -48,7 +48,7 @@ export function SiteNav({
             {/* Who It's For dropdown */}
             <div className="relative" onMouseEnter={() => setWhoOpen(true)} onMouseLeave={() => setWhoOpen(false)}>
               <Link
-                href="/who-its-for"
+                href="/who-its-for/directors"
                 className={cn("flex items-center gap-1", topLink(active === "who"))}
                 aria-haspopup="true"
                 aria-expanded={whoOpen}
@@ -59,9 +59,6 @@ export function SiteNav({
               {whoOpen && (
                 <div className="absolute left-1/2 top-full z-50 w-56 -translate-x-1/2 pt-3">
                   <div className="overflow-hidden rounded-2xl border border-border bg-card p-2 shadow-xl">
-                    <Link href="/who-its-for" className={dropItem(activePersona === "overview")}>
-                      Overview
-                    </Link>
                     {personas.map((p) => (
                       <Link key={p.id} href={`/who-its-for/${p.id}`} className={dropItem(activePersona === p.id)}>
                         {p.label}
@@ -91,6 +88,10 @@ export function SiteNav({
                 </div>
               )}
             </div>
+
+            <Link href="/faq" className={topLink(active === "faq")}>
+              FAQ
+            </Link>
 
             <a href="#request" className={topLink(active === "contact")}>
               Contact
@@ -134,7 +135,7 @@ export function SiteNav({
               <Link href="/products" onClick={() => setMobileMenuOpen(false)} className="rounded-xl border border-border bg-card px-4 py-3 text-[15px] font-medium text-t1">
                 Products
               </Link>
-              <Link href="/who-its-for" onClick={() => setMobileMenuOpen(false)} className="rounded-xl border border-border bg-card px-4 py-3 text-[15px] font-medium text-t1">
+              <Link href="/who-its-for/directors" onClick={() => setMobileMenuOpen(false)} className="rounded-xl border border-border bg-card px-4 py-3 text-[15px] font-medium text-t1">
                 Who It&apos;s For
               </Link>
               <div className="flex flex-col gap-1.5 pl-3">
@@ -154,6 +155,9 @@ export function SiteNav({
               </Link>
               <Link href="/team" onClick={() => setMobileMenuOpen(false)} className="rounded-xl border border-border bg-card px-4 py-3 text-[15px] font-medium text-t1">
                 Our Team
+              </Link>
+              <Link href="/faq" onClick={() => setMobileMenuOpen(false)} className="rounded-xl border border-border bg-card px-4 py-3 text-[15px] font-medium text-t1">
+                FAQ
               </Link>
               <a href="#request" onClick={() => setMobileMenuOpen(false)} className="rounded-xl border border-border bg-card px-4 py-3 text-[15px] font-medium text-t1">
                 Contact

@@ -28,7 +28,7 @@ const faqs: Faq[] = [
       <>
         Directors run their entire program on reignara, and everyone connected to that program —
         titleholders, contestants, and sponsors — gets tools tailored to their role. See{" "}
-        <Link href="/who-its-for" className="text-sage underline hover:text-t1">
+        <Link href="/who-its-for/directors" className="text-sage underline hover:text-t1">
           who it&apos;s for
         </Link>{" "}
         for a walkthrough by role.
@@ -123,7 +123,7 @@ const faqs: Faq[] = [
 export default function FaqPage() {
   return (
     <div className="min-h-screen bg-bg">
-      <SiteNav />
+      <SiteNav active="faq" />
 
       {/* Header */}
       <section className="mx-auto max-w-3xl px-4 pt-12 text-center sm:px-6 sm:pt-16 lg:pt-20">

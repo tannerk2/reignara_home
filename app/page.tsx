@@ -138,7 +138,7 @@ export default function ReignaraLanding() {
           <p className="mb-4 text-[12px] font-medium uppercase tracking-[0.2em] text-sage">Who It&apos;s For</p>
           <h2 className="font-display text-[32px] sm:text-[44px] text-t1">Built for every role in pageantry</h2>
           <Link
-            href="/who-its-for"
+            href="/who-its-for/directors"
             className="group mt-5 inline-flex items-center gap-1.5 text-[14px] font-medium text-sage hover:text-t1 transition-colors"
           >
             See who it&apos;s for
