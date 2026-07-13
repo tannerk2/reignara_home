@@ -78,7 +78,7 @@ export function SiteNav({
               {aboutOpen && (
                 <div className="absolute left-1/2 top-full z-50 w-56 -translate-x-1/2 pt-3">
                   <div className="overflow-hidden rounded-2xl border border-border bg-card p-2 shadow-xl">
-                    <Link href="/#about" className={dropItem(false)}>
+                    <Link href="/who-its-for/directors" className={dropItem(false)}>
                       About reignara
                     </Link>
                     <Link href="/team" className={dropItem(active === "team")}>
@@ -150,7 +150,7 @@ export function SiteNav({
                   </Link>
                 ))}
               </div>
-              <Link href="/#about" onClick={() => setMobileMenuOpen(false)} className="rounded-xl border border-border bg-card px-4 py-3 text-[15px] font-medium text-t1">
+              <Link href="/who-its-for/directors" onClick={() => setMobileMenuOpen(false)} className="rounded-xl border border-border bg-card px-4 py-3 text-[15px] font-medium text-t1">
                 About reignara
               </Link>
               <Link href="/team" onClick={() => setMobileMenuOpen(false)} className="rounded-xl border border-border bg-card px-4 py-3 text-[15px] font-medium text-t1">

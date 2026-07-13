@@ -81,8 +81,8 @@ export const products: Product[] = [
     eyebrow: "Merit",
     headline: "Judging without the panic.",
     description:
-      "Offline-first scoring that keeps working when the signal backstage does not. Tabulation accurate to the decimal, every time.",
-    tags: ["Offline-first", "Instant tabulation", "Audit trail"],
+      "Completely digital, web-based scoring — judges work from any device, every score is saved the instant it's cast, and tabulation happens in real time. Nothing to install, nothing to lose. Accurate to the decimal, every time.",
+    tags: ["Digital native", "Instant tabulation", "Audit trail"],
     layout: "dark",
     renderAlt:
       "Reignara Merit judging interface, showing a scoring rubric and live tabulation across two screens.",
@@ -144,7 +144,7 @@ export const products: Product[] = [
     headline: "Every dollar, accounted for.",
     description:
       "Expenses and scholarships with a clear ledger — where the money came from, where it went, and what remains for the crown.",
-    tags: ["Expense ledger", "Scholarships", "Reporting"],
+    tags: ["Expense ledger", "Financial transparency", "Reporting"],
     layout: "standard",
     renderAlt:
       "Reignara Vault financial ledger on a laptop, showing expense tracking and scholarship balances.",

@@ -34,7 +34,7 @@ export function Headline({
   return (
     <Tag
       className={cn(
-        "font-serif font-semibold leading-[1.02] tracking-tight text-balance",
+        "font-display leading-[1.04] tracking-tight text-balance",
         "text-[2.5rem] sm:text-5xl md:text-7xl",
         className,
       )}

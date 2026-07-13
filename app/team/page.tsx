@@ -125,7 +125,7 @@ export default function TeamPage() {
                 Get in touch
               </a>
               <Link
-                href="/#about"
+                href="/who-its-for/directors"
                 className="inline-flex items-center gap-2 rounded-full border border-bg/20 px-6 py-3.5 text-[15px] font-medium text-bg hover:border-bg/40 transition-colors"
               >
                 Learn more about us

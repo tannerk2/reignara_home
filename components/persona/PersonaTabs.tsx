@@ -33,7 +33,7 @@ export function PersonaTabs({ activeId }: { activeId: string }) {
             </span>
             <span
               className={cn(
-                "text-sm font-semibold tracking-tight text-foreground transition-colors",
+                "font-serif text-[18px] font-medium tracking-tight text-foreground transition-colors",
                 !isActive && "text-foreground/70 group-hover:text-foreground",
               )}
             >

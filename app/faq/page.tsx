@@ -146,7 +146,7 @@ export default function FaqPage() {
               className="group rounded-2xl border border-border bg-card p-5 sm:p-6 [&_summary::-webkit-details-marker]:hidden"
             >
               <summary className="flex cursor-pointer list-none items-center justify-between gap-4">
-                <h2 className="font-display text-[18px] sm:text-[20px] leading-snug text-t1">{faq.q}</h2>
+                <h2 className="font-serif text-[20px] font-medium sm:text-[23px] leading-snug text-t1">{faq.q}</h2>
                 <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full border border-border text-t2 transition-transform group-open:rotate-45">
                   <Plus className="h-4 w-4" />
                 </span>

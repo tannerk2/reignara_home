@@ -7,7 +7,7 @@ export function PersonaDetail({ persona }: { persona: Persona }) {
   return (
     <div className="motion-safe:animate-in motion-safe:fade-in motion-safe:slide-in-from-bottom-3 motion-safe:duration-500">
       <div className="mx-auto max-w-3xl text-center">
-        <h1 className="text-balance font-serif text-3xl font-medium leading-[1.1] tracking-tight text-foreground sm:text-4xl md:text-[2.75rem]">
+        <h1 className="text-balance font-display text-[2rem] leading-[1.08] tracking-tight text-foreground sm:text-[2.5rem] md:text-[3rem]">
           {persona.headline}
         </h1>
         <div className="mt-6 space-y-4">

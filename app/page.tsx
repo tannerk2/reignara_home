@@ -66,7 +66,7 @@ export default function ReignaraLanding() {
                   <span className="flex h-11 w-11 items-center justify-center rounded-full bg-sage/15 text-sage transition-colors group-hover:bg-gold/20 group-hover:text-gold">
                     <p.Icon className="h-5 w-5" strokeWidth={1.75} />
                   </span>
-                  <span className="text-[15px] font-semibold tracking-tight text-t1">{p.label}</span>
+                  <span className="font-serif text-[19px] font-medium tracking-tight text-t1">{p.label}</span>
                   <span className="text-[12px] leading-snug text-t2">{p.teaser}</span>
                 </Link>
               ))}
@@ -118,7 +118,7 @@ export default function ReignaraLanding() {
               <div className="mb-4 flex h-11 w-11 items-center justify-center rounded-full bg-sage/10">
                 <product.Icon className="h-5 w-5 text-sage" />
               </div>
-              <h3 className="font-display text-[20px] text-t1">{product.name}</h3>
+              <h3 className="font-serif text-[23px] font-medium text-t1">{product.name}</h3>
               <p className="mt-2 flex-1 text-[14px] leading-relaxed text-t2">{product.desc}</p>
               <Link
                 href={`/products#${product.slug}`}
@@ -129,56 +129,6 @@ export default function ReignaraLanding() {
               </Link>
             </div>
           ))}
-        </div>
-      </section>
-
-      {/* Who it's for Section */}
-      <section id="about" className="mx-auto max-w-7xl px-4 py-16 sm:px-6 sm:py-24">
-        <div className="mb-12 sm:mb-16">
-          <p className="mb-4 text-[12px] font-medium uppercase tracking-[0.2em] text-sage">Who It&apos;s For</p>
-          <h2 className="font-display text-[32px] sm:text-[44px] text-t1">Built for every role in pageantry</h2>
-          <Link
-            href="/who-its-for/directors"
-            className="group mt-5 inline-flex items-center gap-1.5 text-[14px] font-medium text-sage hover:text-t1 transition-colors"
-          >
-            See who it&apos;s for
-            <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
-          </Link>
-        </div>
-
-        <div className="grid gap-12 md:grid-cols-3 md:gap-16">
-          {/* For Directors */}
-          <div>
-            <h3 className="mb-6 font-display text-[22px] text-t1">For Directors</h3>
-            <ul className="space-y-4">
-              <li className="flex items-start gap-3"><span className="mt-1.5 text-sage">◆</span><span className="text-[16px] leading-relaxed text-t2">Full board visibility</span></li>
-              <li className="flex items-start gap-3"><span className="mt-1.5 text-sage">◆</span><span className="text-[16px] leading-relaxed text-t2">Automated expense workflows</span></li>
-              <li className="flex items-start gap-3"><span className="mt-1.5 text-sage">◆</span><span className="text-[16px] leading-relaxed text-t2">Sponsor relationship management</span></li>
-              <li className="flex items-start gap-3"><span className="mt-1.5 text-sage">◆</span><span className="text-[16px] leading-relaxed text-t2">Calendar coordination across your team</span></li>
-            </ul>
-          </div>
-
-          {/* For Titleholders */}
-          <div>
-            <h3 className="mb-6 font-display text-[22px] text-t1">For Titleholders</h3>
-            <ul className="space-y-4">
-              <li className="flex items-start gap-3"><span className="mt-1.5 text-sage">◆</span><span className="text-[16px] leading-relaxed text-t2">Personal dashboard for your reign</span></li>
-              <li className="flex items-start gap-3"><span className="mt-1.5 text-sage">◆</span><span className="text-[16px] leading-relaxed text-t2">Expense submission in seconds</span></li>
-              <li className="flex items-start gap-3"><span className="mt-1.5 text-sage">◆</span><span className="text-[16px] leading-relaxed text-t2">Appearance calendar at a glance</span></li>
-              <li className="flex items-start gap-3"><span className="mt-1.5 text-sage">◆</span><span className="text-[16px] leading-relaxed text-t2">Direct connection to your board</span></li>
-            </ul>
-          </div>
-
-          {/* For Contestants */}
-          <div>
-            <h3 className="mb-6 font-display text-[22px] text-t1">For Contestants</h3>
-            <ul className="space-y-4">
-              <li className="flex items-start gap-3"><span className="mt-1.5 text-sage">◆</span><span className="text-[16px] leading-relaxed text-t2">Streamlined application and registration</span></li>
-              <li className="flex items-start gap-3"><span className="mt-1.5 text-sage">◆</span><span className="text-[16px] leading-relaxed text-t2">Clear competition timelines and requirements</span></li>
-              <li className="flex items-start gap-3"><span className="mt-1.5 text-sage">◆</span><span className="text-[16px] leading-relaxed text-t2">Document and wardrobe submissions in one place</span></li>
-              <li className="flex items-start gap-3"><span className="mt-1.5 text-sage">◆</span><span className="text-[16px] leading-relaxed text-t2">Transparent judging and results</span></li>
-            </ul>
-          </div>
         </div>
       </section>
 
