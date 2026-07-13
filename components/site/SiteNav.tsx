@@ -92,13 +92,13 @@ export function SiteNav({
               )}
             </div>
 
-            <Link href="/#contact" className={topLink(active === "contact")}>
+            <a href="#request" className={topLink(active === "contact")}>
               Contact
-            </Link>
+            </a>
           </div>
 
           <div className="hidden items-center gap-4 md:flex">
-            <a href="mailto:benson@reignara.com" className="group inline-flex items-center gap-2 rounded-full bg-gold px-5 py-3 text-[14px] font-medium text-t1 hover:bg-gold/90 transition-colors">
+            <a href="#request" className="group inline-flex items-center gap-2 rounded-full bg-gold px-5 py-3 text-[14px] font-medium text-t1 hover:bg-gold/90 transition-colors">
               Request Early Access
               <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
             </a>
@@ -155,11 +155,11 @@ export function SiteNav({
               <Link href="/team" onClick={() => setMobileMenuOpen(false)} className="rounded-xl border border-border bg-card px-4 py-3 text-[15px] font-medium text-t1">
                 Our Team
               </Link>
-              <Link href="/#contact" onClick={() => setMobileMenuOpen(false)} className="rounded-xl border border-border bg-card px-4 py-3 text-[15px] font-medium text-t1">
+              <a href="#request" onClick={() => setMobileMenuOpen(false)} className="rounded-xl border border-border bg-card px-4 py-3 text-[15px] font-medium text-t1">
                 Contact
-              </Link>
+              </a>
               <a
-                href="mailto:benson@reignara.com"
+                href="#request"
                 onClick={() => setMobileMenuOpen(false)}
                 className="group mt-2 inline-flex items-center justify-center gap-2 rounded-full bg-gold px-5 py-3.5 text-[15px] font-medium text-t1"
               >

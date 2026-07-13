@@ -118,7 +118,7 @@ export default function TeamPage() {
             </p>
             <div className="mt-8 flex flex-wrap justify-center gap-3">
               <a
-                href="mailto:benson@reignara.com"
+                href="#request"
                 className="group inline-flex items-center gap-2 rounded-full bg-gold px-6 py-3.5 text-[15px] font-medium text-t1 hover:bg-gold/90 transition-colors"
               >
                 <Mail className="h-4 w-4" />

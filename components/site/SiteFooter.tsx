@@ -19,9 +19,12 @@ export function SiteFooter() {
           <Link href="/team" className="text-[14px] font-medium text-nav-text hover:text-t1 transition-colors">
             Team
           </Link>
-          <Link href="/#contact" className="text-[14px] font-medium text-nav-text hover:text-t1 transition-colors">
-            Contact
+          <Link href="/faq" className="text-[14px] font-medium text-nav-text hover:text-t1 transition-colors">
+            FAQ
           </Link>
+          <a href="#request" className="text-[14px] font-medium text-nav-text hover:text-t1 transition-colors">
+            Contact
+          </a>
           <Link href="/support" className="text-[14px] font-medium text-nav-text hover:text-t1 transition-colors">
             Support
           </Link>

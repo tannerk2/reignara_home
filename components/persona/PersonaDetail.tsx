@@ -100,7 +100,7 @@ export function PersonaDetail({ persona }: { persona: Persona }) {
           {persona.closing}
         </p>
         <a
-          href={persona.cta.href}
+          href="#request"
           className="group mt-8 inline-flex items-center gap-2 rounded-full bg-gold px-6 py-3 text-sm font-semibold text-t1 transition-colors duration-300 hover:bg-gold/90"
         >
           {persona.cta.label}

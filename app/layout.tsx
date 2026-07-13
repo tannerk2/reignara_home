@@ -1,6 +1,7 @@
 import type { Metadata } from 'next'
 import { Inter, Cormorant_Garamond } from 'next/font/google'
 import localFont from 'next/font/local'
+import { InquiryModal } from '@/components/site/InquiryModal'
 import './globals.css'
 
 const inter = Inter({
@@ -41,6 +42,7 @@ export default function RootLayout({
     <html lang="en" className={`${inter.variable} ${cormorant.variable} ${bavex.variable} bg-bg`}>
       <body className="font-sans antialiased">
         {children}
+        <InquiryModal />
       </body>
     </html>
   )
