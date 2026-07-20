@@ -16,6 +16,9 @@ export function SiteFooter() {
           <Link href="/who-its-for/directors" className="text-[14px] font-medium text-nav-text hover:text-t1 transition-colors">
             Who It&apos;s For
           </Link>
+          <Link href="/pricing" className="text-[14px] font-medium text-nav-text hover:text-t1 transition-colors">
+            Pricing
+          </Link>
           <Link href="/team" className="text-[14px] font-medium text-nav-text hover:text-t1 transition-colors">
             Team
           </Link>

@@ -7,7 +7,7 @@ import { ArrowRight, Menu, X, ChevronDown } from "lucide-react"
 import { personas } from "@/content/personas"
 import { cn } from "@/lib/utils"
 
-type ActiveKey = "products" | "who" | "team" | "faq" | "contact" | undefined
+type ActiveKey = "products" | "who" | "pricing" | "team" | "faq" | "contact" | undefined
 
 export function SiteNav({
   active,
@@ -67,6 +67,10 @@ export function SiteNav({
                 </div>
               )}
             </div>
+
+            <Link href="/pricing" className={topLink(active === "pricing")}>
+              Pricing
+            </Link>
 
             <Link href="/faq" className={topLink(active === "faq")}>
               FAQ
@@ -129,6 +133,9 @@ export function SiteNav({
                   </Link>
                 ))}
               </div>
+              <Link href="/pricing" onClick={() => setMobileMenuOpen(false)} className="rounded-xl border border-border bg-card px-4 py-3 text-[15px] font-medium text-t1">
+                Pricing
+              </Link>
               <Link href="/faq" onClick={() => setMobileMenuOpen(false)} className="rounded-xl border border-border bg-card px-4 py-3 text-[15px] font-medium text-t1">
                 FAQ
               </Link>
