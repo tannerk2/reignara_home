@@ -9,6 +9,7 @@
     "deploy:cert": "cdk deploy ReignaraLandingCertStack --require-approval never",
     "deploy:site": "cdk deploy ReignaraLandingSiteStack --require-approval never",
     "deploy:form": "cdk deploy ReignaraLandingFormStack --require-approval never",
+    "deploy:webinar": "cdk deploy ReignaraWebinarStack --require-approval never",
     "deploy:all": "cdk deploy --all --require-approval never",
     "destroy:all": "cdk destroy --all --force"
   },

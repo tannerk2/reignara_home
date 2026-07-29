@@ -1,0 +1,28 @@
+parent_org_id,canonical_name,short_name,has_state_affiliates,state_naming_template,divisions,acronyms,notes,confidence
+miss-america,Miss America Organization,Miss America,yes,Miss {State},Miss::Miss {State}|Teen::Miss {State}'s Teen,MAO,"Nonprofit scholarship system. Teen division renamed from ""Miss {State}'s Outstanding Teen"" to ""Miss {State}'s Teen"" in recent years — seed BOTH as aliases. Locals feed states.",high
+miss-usa,Miss USA (Miss Universe Organization),Miss USA,yes,Miss {State} USA,Miss::Miss {State} USA|Teen::Miss {State} Teen USA,MUO|MUS,Many state pageants are run by licensed multi-state directors (e.g. Vanbros holds several midwest states). Corporate ownership has changed hands repeatedly since 2022 — verify current licensee before outreach.,high
+mrs-america,Mrs. America Inc.,Mrs. America,yes,Mrs. {State} America,Mrs.::Mrs. {State} America|Miss For America Strong::Miss {State} For America Strong,MAI,"Feeds Mrs. World. Single-women's division is branded ""Miss For America Strong"". THIS IS BENSON'S HOME SYSTEM (Idaho America Pageants).",high
+nam,National American Miss,NAM,yes,National American Miss {State},,NAM,"Age divisions run at every state. Also groups states into regional/multi-state events. Naming appears both as ""National American Miss {State}"" and ""Miss {State} National American Miss"" — seed both.",high
+intl-pageants,International Pageants Inc.,International,yes,Mrs. {State} International,Miss::Miss {State} International|Ms.::Ms. {State} International|Mrs.::Mrs. {State} International|Teen::Miss {State} Teen International|Jr. Teen::Miss {State} Jr. Teen International,IPI,"US-based system. NAME COLLISION: distinct from the Japan-based Miss International. Disambiguate on parentOrg, never on string alone.",med-high
+usa-ambassador,USA Ambassador Pageants,USA Ambassador,yes,{State} Ambassador,,USAA,Division names need verification against current site before seeding.,med
+galaxy-usa,Galaxy Pageants USA,Galaxy,yes,Miss {State} Galaxy,Miss::Miss {State} Galaxy|Mrs.::Mrs. {State} Galaxy|Ms.::Ms. {State} Galaxy|Teen::Miss {State} Teen Galaxy|Junior::Junior Miss {State} Galaxy|Classic Mrs.::Classic Mrs. {State} Galaxy,,UK-origin system with a US national final.,med-high
+miss-world-america,Miss World America,MWA,yes,Miss {State},Miss::Miss {State}|Teen::Miss {State} Teen,MWA,Feeds Miss World. State titles collide textually with Miss America state titles — parentOrg cascade is mandatory here.,med-high
+miss-earth-usa,Miss Earth USA,Miss Earth,yes,Miss {State} Earth,Miss::Miss {State} Earth|Teen::Miss {State} Earth Teen,,Feeds Miss Earth (Philippines-based international final).,med
+miss-united-states,Miss United States Organization,United States,yes,Miss {State} United States,Miss::Miss {State} United States|Teen::Miss {State} Teen United States|Mrs.::Mrs. {State} United States|Ms.::Ms. {State} United States|Jr. Teen::Miss {State} Jr. Teen United States,MUSO,Verify exact legal entity name before seeding canonical.,med
+dyw,Distinguished Young Women,DYW,yes,Distinguished Young Women of {State},single (HS junior/senior),DYW,"Formerly America's Junior Miss — seed the legacy name as an alias, older directors still use it.",high
+cinderella,Cinderella Scholarship Pageant,Cinderella,yes,{State} Cinderella,,,,med
+ms-senior-america,Ms. Senior America,Ms. Senior,yes,Ms. {State} Senior America,60+ single division,MSA,,high
+miss-amazing,Miss Amazing,Miss Amazing,yes,{State} Miss Amazing,,,Program for girls and women with disabilities.,med-high
+miss-rodeo-america,Miss Rodeo America,MRA,yes,Miss Rodeo {State},single,MRA,"State associations are largely independent nonprofits — decision-maker is usually a state board, not a single director.",high
+royal-intl-miss,Royal International Miss,RIM,yes,{State} Royal International Miss,,RIM,,med
+american-coed,American Coed Pageants,American Coed,yes,Miss {State} American Coed,,,,med
+usa-national-miss,USA National Miss,UNM,yes,{State} USA National Miss,,UNM,,med
+ms-america,Ms. America Pageant,Ms. America,yes,Ms. {State} America,Ms.::Ms. {State} America|Classic::Ms. {State} Classic America,,NAME COLLISION: separate organization from Mrs. America Inc. Do NOT let the matcher swap Ms./Mrs. — different systems entirely.,med
+mrs-universe,Mrs. Universe,Mrs. Universe,partial,Mrs. {State},Mrs.|Ms.,,Separate from the Miss Universe Organization despite the name. Verify US state structure.,med
+americas-homecoming-queen,America's Homecoming Queen,AHQ,yes,{State} Homecoming Queen,single,AHQ,,low-med
+national-sweetheart,National Sweetheart Pageant,National Sweetheart,no,,single national event,,"Single annual event, no state affiliate layer. Model as one system record.",med
+universal-royalty,Universal Royalty,Universal Royalty,no,,glitz age divisions,UR,Glitz circuit. Runs traveling regional events rather than a formal state structure.,med
+sunburst,Sunburst Beauty Pageant,Sunburst,partial,{State} Sunburst,,,Glitz/natural hybrid circuit.,med
+miss-volunteer-america,Miss Volunteer America,MVA,partial,,single,MVA,Verify structure and state layer before seeding.,low-med
+independent,Independent / Not Affiliated,Independent,no,,,,Catch-all for standalone local or regional pageants with no national parent. Expect this to be a large bucket — do not treat it as junk data.,n/a
+other,Other (specify),Other,no,,,,"Free-text capture. Route every ""other"" submission to the admin review queue.",n/a

@@ -11,6 +11,8 @@ import { Construct } from "constructs";
 export interface SiteStackProps extends cdk.StackProps {
   domainName: string;
   certificate: acm.ICertificate;
+  /** API Gateway domain for the webinar dynamic routes (join/resend/submit). */
+  apiDomainName?: string;
 }
 
 export class SiteStack extends cdk.Stack {
@@ -56,6 +58,26 @@ function handler(event) {
       runtime: cloudfront.FunctionRuntime.JS_2_0,
     });
 
+    // Dynamic webinar routes proxy to the API Gateway origin. These behaviors
+    // deliberately omit the URL-rewrite function so paths pass through as-is,
+    // and disable caching (302 redirects / POSTs must not be cached).
+    const apiBehaviors: Record<string, cloudfront.BehaviorOptions> = {};
+    if (props.apiDomainName) {
+      const apiOrigin = new origins.HttpOrigin(props.apiDomainName, {
+        protocolPolicy: cloudfront.OriginProtocolPolicy.HTTPS_ONLY,
+      });
+      const dynamicBehavior: cloudfront.BehaviorOptions = {
+        origin: apiOrigin,
+        viewerProtocolPolicy: cloudfront.ViewerProtocolPolicy.REDIRECT_TO_HTTPS,
+        allowedMethods: cloudfront.AllowedMethods.ALLOW_ALL,
+        cachePolicy: cloudfront.CachePolicy.CACHING_DISABLED,
+        originRequestPolicy: cloudfront.OriginRequestPolicy.ALL_VIEWER_EXCEPT_HOST_HEADER,
+      };
+      apiBehaviors["/api/webinar/*"] = dynamicBehavior;
+      apiBehaviors["/webinar/join"] = dynamicBehavior;
+      apiBehaviors["/webinar/resend"] = dynamicBehavior;
+    }
+
     const distribution = new cloudfront.Distribution(this, "Distribution", {
       defaultRootObject: "index.html",
       domainNames: [props.domainName],
@@ -73,6 +95,7 @@ function handler(event) {
           },
         ],
       },
+      additionalBehaviors: apiBehaviors,
       errorResponses: [
         {
           httpStatus: 403,
