@@ -26,6 +26,8 @@ const webinarStack = new WebinarStack(app, "ReignaraWebinarStack", {
   joinUrlSecretName: "reignara/webinar/2026-08-05/join-url",
   senderEmail: "no-reply@reignara.com",
   senderName: "Reignara",
+  crmIntakeUrl: "https://3y6d4yxlfa.execute-api.us-west-2.amazonaws.com/registrations",
+  crmTokenSecretName: "reignara-crm/registration-intake-token",
 });
 
 new SiteStack(app, "ReignaraLandingSiteStack", {

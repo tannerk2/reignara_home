@@ -2,8 +2,10 @@ import * as cdk from "aws-cdk-lib"
 import * as lambda from "aws-cdk-lib/aws-lambda"
 import * as dynamodb from "aws-cdk-lib/aws-dynamodb"
 import * as secretsmanager from "aws-cdk-lib/aws-secretsmanager"
+import * as sqs from "aws-cdk-lib/aws-sqs"
 import { HttpApi, HttpMethod, CorsHttpMethod } from "aws-cdk-lib/aws-apigatewayv2"
 import { HttpLambdaIntegration } from "aws-cdk-lib/aws-apigatewayv2-integrations"
+import { DynamoEventSource, SqsDlq } from "aws-cdk-lib/aws-lambda-event-sources"
 import * as path from "path"
 import { Construct } from "constructs"
 
@@ -12,6 +14,8 @@ export interface WebinarStackProps extends cdk.StackProps {
   joinUrlSecretName: string // reignara/webinar/2026-08-05/join-url
   senderEmail: string
   senderName: string
+  crmIntakeUrl: string // reignara-crm registration intake endpoint
+  crmTokenSecretName: string // Secrets Manager name of the CRM bearer token
 }
 
 export class WebinarStack extends cdk.Stack {
@@ -28,6 +32,7 @@ export class WebinarStack extends cdk.Stack {
       sortKey: { name: "SK", type: dynamodb.AttributeType.STRING },
       billingMode: dynamodb.BillingMode.PAY_PER_REQUEST,
       timeToLiveAttribute: "ttl", // rate-limit items expire; registrations have no ttl
+      stream: dynamodb.StreamViewType.NEW_IMAGE, // feeds the CRM sync
       pointInTimeRecoverySpecification: { pointInTimeRecoveryEnabled: true },
       removalPolicy: cdk.RemovalPolicy.RETAIN, // never drop registrant data on stack changes
     })
@@ -124,11 +129,44 @@ export class WebinarStack extends cdk.Stack {
       integration: new HttpLambdaIntegration("ResendInt", resendFn),
     })
 
+    // ---- CRM sync (DynamoDB Stream -> reignara-crm intake) ----
+    const crmTokenSecret = secretsmanager.Secret.fromSecretNameV2(this, "CrmToken", props.crmTokenSecretName)
+    const crmDlq = new sqs.Queue(this, "CrmSyncDlq", { retentionPeriod: cdk.Duration.days(14) })
+
+    const crmSyncFn = new lambda.Function(this, "CrmSyncFn", {
+      ...fnProps,
+      code: lambda.Code.fromAsset(distDir("crm-sync")),
+      environment: {
+        CRM_INTAKE_URL: props.crmIntakeUrl,
+        CRM_TOKEN_SECRET_NAME: props.crmTokenSecretName,
+      },
+    })
+    crmTokenSecret.grantRead(crmSyncFn)
+
+    crmSyncFn.addEventSource(
+      new DynamoEventSource(table, {
+        startingPosition: lambda.StartingPosition.TRIM_HORIZON,
+        batchSize: 10,
+        maxBatchingWindow: cdk.Duration.seconds(10),
+        retryAttempts: 5,
+        bisectBatchOnError: true,
+        reportBatchItemFailures: true,
+        onFailure: new SqsDlq(crmDlq),
+        // Only registrations trigger the sync (skip RATE#/ORG#/SYS# writes).
+        filters: [
+          lambda.FilterCriteria.filter({
+            dynamodb: { Keys: { SK: { S: lambda.FilterRule.beginsWith("REG#") } } },
+          }),
+        ],
+      }),
+    )
+
     this.apiDomainName = `${api.httpApiId}.execute-api.${this.region}.amazonaws.com`
 
     new cdk.CfnOutput(this, "WebinarApiEndpoint", { value: api.apiEndpoint })
     new cdk.CfnOutput(this, "WebinarApiDomain", { value: this.apiDomainName })
     new cdk.CfnOutput(this, "WebinarTableName", { value: table.tableName })
     new cdk.CfnOutput(this, "JoinUrlSecretName", { value: joinUrlSecret.secretName })
+    new cdk.CfnOutput(this, "CrmSyncDlqUrl", { value: crmDlq.queueUrl })
   }
 }

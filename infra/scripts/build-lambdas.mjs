@@ -14,6 +14,7 @@ const entries = {
   submit: "submit.ts",
   redirect: "redirect.ts",
   resend: "resend.ts",
+  "crm-sync": "crm-sync.ts",
 }
 
 for (const [name, file] of Object.entries(entries)) {
