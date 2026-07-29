@@ -1,7 +1,7 @@
 "use client"
 
 import { useEffect, useMemo, useRef, useState } from "react"
-import { ArrowRight } from "lucide-react"
+import { ArrowRight, Check } from "lucide-react"
 import {
   ROLES,
   LEVELS,
@@ -10,6 +10,7 @@ import {
   EVENTS_PER_YEAR,
   CURRENT_TOOLS,
   MODULES,
+  MODULE_DESCRIPTIONS,
 } from "@/shared/enums"
 import { PARENT_ORGS } from "@/shared/generated/parent-orgs.generated"
 import { registrationFormSchema, suggestEmailCorrection } from "@/shared/schema"
@@ -477,7 +478,7 @@ export function RegistrationForm() {
 
         <fieldset className="mt-6">
           <legend className={labelCls}>Which modules interest you most?</legend>
-          <div className="mt-2 flex flex-wrap gap-2">
+          <div className="mt-2 grid gap-2 sm:grid-cols-2">
             {MODULES.map((m) => {
               const active = v.modulesOfInterest.includes(m)
               return (
@@ -487,11 +488,23 @@ export function RegistrationForm() {
                   aria-pressed={active}
                   onClick={() => toggleArray("modulesOfInterest", m)}
                   className={cn(
-                    "min-h-[44px] rounded-full border px-4 text-[14px] transition-colors",
-                    active ? "border-sage bg-sage/10 text-t1" : "border-border text-t2 hover:border-sage/40",
+                    "flex min-h-[44px] items-start gap-3 rounded-xl border p-3 text-left transition-colors",
+                    active ? "border-sage bg-sage/10" : "border-border hover:border-sage/40",
                   )}
                 >
-                  {m}
+                  <span
+                    aria-hidden="true"
+                    className={cn(
+                      "mt-0.5 flex h-5 w-5 shrink-0 items-center justify-center rounded-md border transition-colors",
+                      active ? "border-sage bg-sage text-white" : "border-border",
+                    )}
+                  >
+                    {active && <Check className="h-3.5 w-3.5" />}
+                  </span>
+                  <span>
+                    <span className="block text-[14px] font-medium text-t1">{m}</span>
+                    <span className="mt-0.5 block text-[13px] leading-snug text-t2">{MODULE_DESCRIPTIONS[m]}</span>
+                  </span>
                 </button>
               )
             })}

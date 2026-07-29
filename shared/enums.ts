@@ -23,18 +23,23 @@ export type ContestantBucket = (typeof CONTESTANT_BUCKETS)[number]
 export const EVENTS_PER_YEAR = ["1", "2–3", "4+"] as const
 export type EventsPerYear = (typeof EVENTS_PER_YEAR)[number]
 
-export const CURRENT_TOOLS = [
-  "Spreadsheets/paper",
-  "Pageant Planet",
-  "Van Bros",
-  "Custom-built",
-  "Other",
-] as const
+export const CURRENT_TOOLS = ["Spreadsheets/paper", "Pageant Planet", "Custom-built", "Other"] as const
 export type CurrentTool = (typeof CURRENT_TOOLS)[number]
 
 // Envoy is intentionally excluded — it is a standalone product, not a Meridian module.
 export const MODULES = ["Director", "Podium", "Merit", "Reign", "Vault", "Patron", "Spotlight"] as const
 export type ModuleName = (typeof MODULES)[number]
+
+// Short, one-line explanations shown beside each module in the picker.
+export const MODULE_DESCRIPTIONS: Record<ModuleName, string> = {
+  Director: "Run your whole program — contestants, titleholders, applications, and records in one place.",
+  Podium: "Announcements, messaging, and stakeholder updates in one communication hub.",
+  Merit: "Digital judging and scoring — fair, transparent, and accurate to the decimal.",
+  Reign: "A mobile companion app for titleholders to manage appearances and their reign.",
+  Vault: "Budgets, expenses, receipts, and reimbursements with clear financial transparency.",
+  Patron: "Sponsor relationships and deliverables, tracked from first ask to renewal.",
+  Spotlight: "Social media insights and analytics to grow your reach and engagement.",
+}
 
 export const MATCH_STATUS = ["auto", "review", "new"] as const
 export type MatchStatus = (typeof MATCH_STATUS)[number]
