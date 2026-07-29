@@ -7,7 +7,6 @@ import {
   LEVELS,
   US_STATES,
   CONTESTANT_BUCKETS,
-  EVENTS_PER_YEAR,
   CURRENT_TOOLS,
   MODULES,
   MODULE_DESCRIPTIONS,
@@ -31,7 +30,6 @@ type Values = {
   consentMarketing: boolean
   phone: string
   contestantBucket: string
-  eventsPerYear: string
   currentTools: string[]
   modulesOfInterest: string[]
   notes: string
@@ -49,7 +47,6 @@ const INITIAL: Values = {
   consentMarketing: false,
   phone: "",
   contestantBucket: "",
-  eventsPerYear: "",
   currentTools: [],
   modulesOfInterest: [],
   notes: "",
@@ -125,7 +122,6 @@ export function RegistrationForm() {
       ...v,
       phone: v.phone || undefined,
       contestantBucket: v.contestantBucket || undefined,
-      eventsPerYear: v.eventsPerYear || undefined,
       notes: v.notes || undefined,
     })
     if (!parsed.success) {
@@ -432,25 +428,6 @@ export function RegistrationForm() {
               ))}
             </select>
           </div>
-        </div>
-
-        <div className="mt-5">
-          <label htmlFor="eventsPerYear" className={labelCls}>
-            Events per year
-          </label>
-          <select
-            id="eventsPerYear"
-            className={cn("mt-1.5 sm:max-w-[240px]", inputCls("eventsPerYear"))}
-            value={v.eventsPerYear}
-            onChange={(e) => set("eventsPerYear", e.target.value)}
-          >
-            <option value="">Prefer not to say</option>
-            {EVENTS_PER_YEAR.map((e2) => (
-              <option key={e2} value={e2}>
-                {e2}
-              </option>
-            ))}
-          </select>
         </div>
 
         <fieldset className="mt-6">

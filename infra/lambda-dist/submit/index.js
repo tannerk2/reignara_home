@@ -4078,7 +4078,6 @@ var ROLES = [
 ];
 var LEVELS = ["Local", "Regional", "State", "National", "International"];
 var CONTESTANT_BUCKETS = ["Under 25", "25\u201375", "76\u2013200", "200+"];
-var EVENTS_PER_YEAR = ["1", "2\u20133", "4+"];
 var CURRENT_TOOLS = [
   "Spreadsheets/paper",
   "Google Docs/Forms",
@@ -4310,7 +4309,6 @@ var registrationFormSchema = external_exports.object({
   // Optional
   phone: emptyToUndef(external_exports.string().trim().max(24)),
   contestantBucket: emptyToUndef(external_exports.enum(asTuple(CONTESTANT_BUCKETS))),
-  eventsPerYear: emptyToUndef(external_exports.enum(asTuple(EVENTS_PER_YEAR))),
   currentTools: external_exports.array(external_exports.enum(asTuple(CURRENT_TOOLS))).max(CURRENT_TOOLS.length).optional().default([]),
   modulesOfInterest: external_exports.array(external_exports.enum(asTuple(MODULES))).max(MODULES.length).optional().default([]),
   notes: emptyToUndef(external_exports.string().trim().max(500, "Keep notes under 500 characters"))
@@ -4687,7 +4685,6 @@ var handler = async (event) => {
     state: d.state,
     phone: toE164(d.phone) ?? void 0,
     contestantBucket: d.contestantBucket,
-    eventsPerYear: d.eventsPerYear,
     currentTools: d.currentTools ?? [],
     modulesOfInterest: d.modulesOfInterest ?? [],
     notes: d.notes,

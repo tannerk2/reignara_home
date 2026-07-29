@@ -20,9 +20,6 @@ export type Level = (typeof LEVELS)[number]
 export const CONTESTANT_BUCKETS = ["Under 25", "25–75", "76–200", "200+"] as const
 export type ContestantBucket = (typeof CONTESTANT_BUCKETS)[number]
 
-export const EVENTS_PER_YEAR = ["1", "2–3", "4+"] as const
-export type EventsPerYear = (typeof EVENTS_PER_YEAR)[number]
-
 export const CURRENT_TOOLS = [
   "Spreadsheets/paper",
   "Google Docs/Forms",

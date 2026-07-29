@@ -1,7 +1,7 @@
 // Zod schema derived entirely from the enum single-source. Used by the client
 // form AND re-validated in the submit Lambda (never trust the client copy).
 import { z } from "zod"
-import { ROLES, LEVELS, STATE_NAMES, CONTESTANT_BUCKETS, EVENTS_PER_YEAR, CURRENT_TOOLS, MODULES } from "./enums"
+import { ROLES, LEVELS, STATE_NAMES, CONTESTANT_BUCKETS, CURRENT_TOOLS, MODULES } from "./enums"
 import { PARENT_ORG_IDS } from "./generated/parent-orgs.generated"
 
 const asTuple = <T extends string>(a: readonly T[]) => a as unknown as [T, ...T[]]
@@ -52,7 +52,6 @@ export const registrationFormSchema = z.object({
   // Optional
   phone: emptyToUndef(z.string().trim().max(24)),
   contestantBucket: emptyToUndef(z.enum(asTuple(CONTESTANT_BUCKETS))),
-  eventsPerYear: emptyToUndef(z.enum(asTuple(EVENTS_PER_YEAR))),
   currentTools: z.array(z.enum(asTuple(CURRENT_TOOLS))).max(CURRENT_TOOLS.length).optional().default([]),
   modulesOfInterest: z.array(z.enum(asTuple(MODULES))).max(MODULES.length).optional().default([]),
   notes: emptyToUndef(z.string().trim().max(500, "Keep notes under 500 characters")),

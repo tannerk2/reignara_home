@@ -30,7 +30,6 @@ function buildPayload(item: Record<string, any>) {
     level: item.level,
     state: item.state,
     contestantBucket: item.contestantBucket,
-    eventsPerYear: item.eventsPerYear,
     currentTools: item.currentTools,
     modulesOfInterest: item.modulesOfInterest,
     notes: item.notes,

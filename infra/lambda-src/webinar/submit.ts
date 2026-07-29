@@ -81,7 +81,6 @@ export const handler = async (event: any) => {
     state: d.state,
     phone: toE164(d.phone) ?? undefined,
     contestantBucket: d.contestantBucket,
-    eventsPerYear: d.eventsPerYear,
     currentTools: d.currentTools ?? [],
     modulesOfInterest: d.modulesOfInterest ?? [],
     notes: d.notes,
