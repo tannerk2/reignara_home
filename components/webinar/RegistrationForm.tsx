@@ -478,7 +478,7 @@ export function RegistrationForm() {
 
         <fieldset className="mt-6">
           <legend className={labelCls}>Which modules interest you most?</legend>
-          <div className="mt-2 grid gap-2 sm:grid-cols-2">
+          <div className="mt-2 flex flex-col gap-2">
             {MODULES.map((m) => {
               const active = v.modulesOfInterest.includes(m)
               return (
