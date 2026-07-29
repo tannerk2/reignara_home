@@ -18,11 +18,14 @@ export { GetCommand, PutCommand, UpdateCommand, QueryCommand }
 export const TABLE = process.env.TABLE_NAME as string
 
 const sm = new SecretsManagerClient({})
-const secretCache = new Map<string, string>()
+// Cache with a short TTL so out-of-band secret updates/rotations are picked up
+// within minutes without a redeploy (join URL, Brevo key, CRM token).
+const SECRET_TTL_MS = 5 * 60 * 1000
+const secretCache = new Map<string, { value: string; exp: number }>()
 
 export async function getSecret(name: string): Promise<string> {
   const cached = secretCache.get(name)
-  if (cached) return cached
+  if (cached && cached.exp > Date.now()) return cached.value
   const res = await sm.send(new GetSecretValueCommand({ SecretId: name }))
   let value = (res.SecretString || "").trim()
   if (value.startsWith("{")) {
@@ -33,7 +36,7 @@ export async function getSecret(name: string): Promise<string> {
       /* keep raw */
     }
   }
-  secretCache.set(name, value)
+  secretCache.set(name, { value, exp: Date.now() + SECRET_TTL_MS })
   return value
 }
 

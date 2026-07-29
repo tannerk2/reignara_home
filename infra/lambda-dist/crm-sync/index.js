@@ -34,10 +34,11 @@ var ddb = import_lib_dynamodb.DynamoDBDocumentClient.from(new import_client_dyna
 });
 var TABLE = process.env.TABLE_NAME;
 var sm = new import_client_secrets_manager.SecretsManagerClient({});
+var SECRET_TTL_MS = 5 * 60 * 1e3;
 var secretCache = /* @__PURE__ */ new Map();
 async function getSecret(name) {
   const cached = secretCache.get(name);
-  if (cached) return cached;
+  if (cached && cached.exp > Date.now()) return cached.value;
   const res = await sm.send(new import_client_secrets_manager.GetSecretValueCommand({ SecretId: name }));
   let value = (res.SecretString || "").trim();
   if (value.startsWith("{")) {
@@ -47,7 +48,7 @@ async function getSecret(name) {
     } catch {
     }
   }
-  secretCache.set(name, value);
+  secretCache.set(name, { value, exp: Date.now() + SECRET_TTL_MS });
   return value;
 }
 
