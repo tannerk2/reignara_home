@@ -23,7 +23,14 @@ export type ContestantBucket = (typeof CONTESTANT_BUCKETS)[number]
 export const EVENTS_PER_YEAR = ["1", "2–3", "4+"] as const
 export type EventsPerYear = (typeof EVENTS_PER_YEAR)[number]
 
-export const CURRENT_TOOLS = ["Spreadsheets/paper", "Pageant Planet", "Custom-built", "Other"] as const
+export const CURRENT_TOOLS = [
+  "Spreadsheets/paper",
+  "Google Docs/Forms",
+  "JotForm",
+  "Pageant Planet",
+  "Custom-built",
+  "Other",
+] as const
 export type CurrentTool = (typeof CURRENT_TOOLS)[number]
 
 // Envoy is intentionally excluded — it is a standalone product, not a Meridian module.

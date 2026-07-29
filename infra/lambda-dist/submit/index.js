@@ -4079,7 +4079,14 @@ var ROLES = [
 var LEVELS = ["Local", "Regional", "State", "National", "International"];
 var CONTESTANT_BUCKETS = ["Under 25", "25\u201375", "76\u2013200", "200+"];
 var EVENTS_PER_YEAR = ["1", "2\u20133", "4+"];
-var CURRENT_TOOLS = ["Spreadsheets/paper", "Pageant Planet", "Custom-built", "Other"];
+var CURRENT_TOOLS = [
+  "Spreadsheets/paper",
+  "Google Docs/Forms",
+  "JotForm",
+  "Pageant Planet",
+  "Custom-built",
+  "Other"
+];
 var MODULES = ["Director", "Podium", "Merit", "Reign", "Vault", "Patron", "Spotlight"];
 var US_STATES = [
   { name: "Alabama", abbr: "AL" },
