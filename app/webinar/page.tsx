@@ -18,7 +18,7 @@ export default function WebinarPage() {
       <section className="mx-auto max-w-2xl px-4 pt-12 sm:px-6 sm:pt-16">
         <p className="mb-4 text-[12px] font-medium uppercase tracking-[0.2em] text-sage">Live Webinar</p>
         <h1 className="font-display text-[34px] sm:text-[46px] lg:text-[52px] leading-[1.08] tracking-tight text-t1">
-          See {WEBINAR_TITLE.replace("Meridian by Reignara — ", "")} — live
+          Meridian Platform Demo
         </h1>
         <p className="mt-4 text-[16px] sm:text-[18px] leading-relaxed text-t2">
           Join us for <strong className="text-t1">{WEBINAR_TITLE}</strong>. We&apos;ll walk through how Meridian runs a
