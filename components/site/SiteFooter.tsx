@@ -34,6 +34,9 @@ export function SiteFooter() {
           <Link href="/privacy" className="text-[14px] font-medium text-nav-text hover:text-t1 transition-colors">
             Privacy
           </Link>
+          <Link href="/terms" className="text-[14px] font-medium text-nav-text hover:text-t1 transition-colors">
+            Terms
+          </Link>
         </div>
         <p className="text-[13px] text-t2">© 2026 Reignara. All rights reserved.</p>
       </div>
