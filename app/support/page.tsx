@@ -135,7 +135,7 @@ export default function SupportPage() {
             icon={<ShieldCheck className="h-4 w-4 text-sage" />}
             question="How do I delete my account or my data?"
           >
-            You can request account or data deletion from within the app under <strong className="text-t1">Settings → Account</strong>, or by emailing <a href="mailto:support@reignara.com" className="text-sage hover:underline">support@reignara.com</a> from the address tied to your account. We&apos;ll confirm and process the request, subject to any data we&apos;re legally required to retain. Details are in our <Link href="/privacy" className="text-sage hover:underline">Privacy Policy</Link>.
+            You can request account or data deletion from within the app under <strong className="text-t1">Account → Privacy &amp; Security → Delete Account</strong>, or by emailing <a href="mailto:support@reignara.com" className="text-sage hover:underline">support@reignara.com</a> from the address tied to your account. We&apos;ll confirm and process the request, subject to any data we&apos;re legally required to retain. Details are in our <Link href="/privacy" className="text-sage hover:underline">Privacy Policy</Link>.
           </FaqItem>
 
           <FaqItem
